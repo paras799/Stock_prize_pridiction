@@ -1,4 +1,4 @@
-import { Sliders, CheckCircle2, Cpu, FileCode } from 'lucide-react';
+import { CheckCircle2, Cpu, FileCode } from 'lucide-react';
 
 const ModelInfoPanel = ({ modelInfo }) => {
   if (!modelInfo) {

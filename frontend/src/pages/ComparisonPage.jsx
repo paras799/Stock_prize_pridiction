@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Scale, Award, Activity, Zap, CheckCircle2, Loader2, ArrowRight } from 'lucide-react';
+import { Scale, Award, Zap, Loader2, ArrowRight } from 'lucide-react';
 import ComparisonChart from '../components/charts/ComparisonChart';
 import { fetchComparisonMetrics } from '../services/api';
 
