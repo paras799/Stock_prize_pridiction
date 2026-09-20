@@ -1,4 +1,4 @@
-const API_BASE_URL = 'http://localhost:8000';
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'https://stock-prize-pridiction-mk3p.onrender.com';
 
 export const fetchHistoricalData = async (limit = 100) => {
   const response = await fetch(`${API_BASE_URL}/historical-data?limit=${limit}`);
