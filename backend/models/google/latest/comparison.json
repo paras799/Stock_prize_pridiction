@@ -1,0 +1,89 @@
+{
+  "asset_id": "google",
+  "asset_name": "Google (Alphabet Inc.)",
+  "recommended_best_model": "multiple_linear",
+  "recommended_best_model_name": "Multiple Linear Regression",
+  "models": [
+    {
+      "model_key": "linear",
+      "model_name": "Simple Linear Regression",
+      "r2_percentage": 98.38,
+      "mae": 3.9609,
+      "rmse": 5.2296,
+      "mape": 1.23,
+      "features_used": [
+        "Open"
+      ]
+    },
+    {
+      "model_key": "multiple_linear",
+      "model_name": "Multiple Linear Regression",
+      "r2_percentage": 99.72,
+      "mae": 1.6101,
+      "rmse": 2.1709,
+      "mape": 0.5,
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ]
+    },
+    {
+      "model_key": "polynomial",
+      "model_name": "Polynomial Regression (Degree 3)",
+      "r2_percentage": 55.17,
+      "mae": 14.1252,
+      "rmse": 27.5148,
+      "mape": 4.14,
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ]
+    },
+    {
+      "model_key": "svr",
+      "model_name": "Support Vector Regression (SVR - RBF)",
+      "r2_percentage": -2493.88,
+      "mae": 204.6435,
+      "rmse": 209.2889,
+      "mape": 63.11,
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ]
+    },
+    {
+      "model_key": "random_forest",
+      "model_name": "Random Forest Regressor",
+      "r2_percentage": -1035.91,
+      "mae": 132.2651,
+      "rmse": 138.4979,
+      "mape": 40.24,
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ]
+    },
+    {
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting Regressor",
+      "r2_percentage": -1030.91,
+      "mae": 131.9576,
+      "rmse": 138.1931,
+      "mape": 40.15,
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ]
+    }
+  ]
+}

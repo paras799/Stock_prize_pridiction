@@ -1,0 +1,2657 @@
+{
+  "asset_id": "google",
+  "asset_name": "Google (Alphabet Inc.)",
+  "symbol_yfinance": "GOOGL",
+  "symbol_twelve_data": "GOOGL",
+  "currency": "USD",
+  "training_period": {
+    "start_date": "2019-09-24",
+    "end_date": "2026-09-23",
+    "total_records": 1759,
+    "train_count": 1231,
+    "test_count": 264
+  },
+  "recommended_best_model": "multiple_linear",
+  "recommended_best_model_name": "Multiple Linear Regression",
+  "selection_strategy": "Multi-metric optimization prioritizing lowest test set MAE & MAPE with positive R\u00b2",
+  "created_at": "2026-09-24T13:29:23.861541+00:00",
+  "models": {
+    "linear": {
+      "model_key": "linear",
+      "model_name": "Simple Linear Regression",
+      "description": "Basic single-variable linear relationship model predicting Close solely from Open price.",
+      "features_used": [
+        "Open"
+      ],
+      "formula_display": "Close = b0 + b1(Open)",
+      "r2": 0.9838,
+      "r2_percentage": 98.38,
+      "mae": 3.9609,
+      "mse": 27.3488,
+      "rmse": 5.2296,
+      "mape": 1.23,
+      "test_samples": [
+        {
+          "date": "2026-06-30",
+          "open": 353.6427,
+          "actualClose": 357.1404,
+          "predictedClose": 353.293,
+          "error": 3.8474
+        },
+        {
+          "date": "2026-07-01",
+          "open": 358.1398,
+          "actualClose": 360.978,
+          "predictedClose": 357.7822,
+          "error": 3.1958
+        },
+        {
+          "date": "2026-07-02",
+          "open": 359.2491,
+          "actualClose": 359.6788,
+          "predictedClose": 358.8895,
+          "error": 0.7893
+        },
+        {
+          "date": "2026-07-06",
+          "open": 361.3177,
+          "actualClose": 366.2246,
+          "predictedClose": 360.9545,
+          "error": 5.2701
+        },
+        {
+          "date": "2026-07-07",
+          "open": 368.8329,
+          "actualClose": 366.7942,
+          "predictedClose": 368.4564,
+          "error": 1.6622
+        },
+        {
+          "date": "2026-07-08",
+          "open": 364.5257,
+          "actualClose": 361.6875,
+          "predictedClose": 364.1568,
+          "error": 2.4693
+        },
+        {
+          "date": "2026-07-09",
+          "open": 354.0824,
+          "actualClose": 358.6595,
+          "predictedClose": 353.732,
+          "error": 4.9275
+        },
+        {
+          "date": "2026-07-10",
+          "open": 357.3003,
+          "actualClose": 356.9506,
+          "predictedClose": 356.9442,
+          "error": 0.0064
+        },
+        {
+          "date": "2026-07-13",
+          "open": 355.9612,
+          "actualClose": 352.2836,
+          "predictedClose": 355.6074,
+          "error": 3.3238
+        },
+        {
+          "date": "2026-07-14",
+          "open": 350.9744,
+          "actualClose": 359.2791,
+          "predictedClose": 350.6295,
+          "error": 8.6496
+        },
+        {
+          "date": "2026-07-15",
+          "open": 357.7401,
+          "actualClose": 370.6818,
+          "predictedClose": 357.3832,
+          "error": 13.2986
+        },
+        {
+          "date": "2026-07-16",
+          "open": 372.8204,
+          "actualClose": 354.2323,
+          "predictedClose": 372.4367,
+          "error": 18.2044
+        },
+        {
+          "date": "2026-07-17",
+          "open": 345.7777,
+          "actualClose": 346.5472,
+          "predictedClose": 345.442,
+          "error": 1.1052
+        },
+        {
+          "date": "2026-07-20",
+          "open": 350.6546,
+          "actualClose": 351.7639,
+          "predictedClose": 350.3103,
+          "error": 1.4536
+        },
+        {
+          "date": "2026-07-21",
+          "open": 351.0943,
+          "actualClose": 346.927,
+          "predictedClose": 350.7492,
+          "error": 3.8222
+        },
+        {
+          "date": "2026-07-22",
+          "open": 347.9363,
+          "actualClose": 341.8702,
+          "predictedClose": 347.5968,
+          "error": 5.7266
+        },
+        {
+          "date": "2026-07-23",
+          "open": 320.9237,
+          "actualClose": 317.4859,
+          "predictedClose": 320.632,
+          "error": 3.1461
+        },
+        {
+          "date": "2026-07-24",
+          "open": 318.2155,
+          "actualClose": 319.5346,
+          "predictedClose": 317.9286,
+          "error": 1.606
+        },
+        {
+          "date": "2026-07-27",
+          "open": 324.8312,
+          "actualClose": 326.3502,
+          "predictedClose": 324.5326,
+          "error": 1.8176
+        },
+        {
+          "date": "2026-07-28",
+          "open": 327.6894,
+          "actualClose": 333.4956,
+          "predictedClose": 327.3857,
+          "error": 6.1099
+        },
+        {
+          "date": "2026-07-29",
+          "open": 334.455,
+          "actualClose": 336.4937,
+          "predictedClose": 334.1394,
+          "error": 2.3543
+        },
+        {
+          "date": "2026-07-30",
+          "open": 333.9853,
+          "actualClose": 333.4457,
+          "predictedClose": 333.6705,
+          "error": 0.2248
+        },
+        {
+          "date": "2026-07-31",
+          "open": 340.6111,
+          "actualClose": 355.9012,
+          "predictedClose": 340.2845,
+          "error": 15.6167
+        },
+        {
+          "date": "2026-08-03",
+          "open": 365.2153,
+          "actualClose": 373.2701,
+          "predictedClose": 364.8451,
+          "error": 8.425
+        },
+        {
+          "date": "2026-08-04",
+          "open": 367.9835,
+          "actualClose": 377.4074,
+          "predictedClose": 367.6084,
+          "error": 9.799
+        },
+        {
+          "date": "2026-08-05",
+          "open": 383.0937,
+          "actualClose": 362.1972,
+          "predictedClose": 382.6919,
+          "error": 20.4947
+        },
+        {
+          "date": "2026-08-06",
+          "open": 360.5383,
+          "actualClose": 357.5202,
+          "predictedClose": 360.1764,
+          "error": 2.6562
+        },
+        {
+          "date": "2026-08-07",
+          "open": 356.4908,
+          "actualClose": 354.0724,
+          "predictedClose": 356.1362,
+          "error": 2.0638
+        },
+        {
+          "date": "2026-08-10",
+          "open": 354.9519,
+          "actualClose": 357.2903,
+          "predictedClose": 354.5999,
+          "error": 2.6904
+        },
+        {
+          "date": "2026-08-11",
+          "open": 355.6614,
+          "actualClose": 343.5791,
+          "predictedClose": 355.3082,
+          "error": 11.7291
+        },
+        {
+          "date": "2026-08-12",
+          "open": 346.0875,
+          "actualClose": 343.3193,
+          "predictedClose": 345.7513,
+          "error": 2.432
+        },
+        {
+          "date": "2026-08-13",
+          "open": 345.5479,
+          "actualClose": 346.1375,
+          "predictedClose": 345.2126,
+          "error": 0.9249
+        },
+        {
+          "date": "2026-08-14",
+          "open": 346.5772,
+          "actualClose": 345.6778,
+          "predictedClose": 346.2401,
+          "error": 0.5623
+        },
+        {
+          "date": "2026-08-17",
+          "open": 346.0476,
+          "actualClose": 343.779,
+          "predictedClose": 345.7114,
+          "error": 1.9324
+        },
+        {
+          "date": "2026-08-18",
+          "open": 342.1901,
+          "actualClose": 343.9789,
+          "predictedClose": 341.8607,
+          "error": 2.1182
+        },
+        {
+          "date": "2026-08-19",
+          "open": 342.24,
+          "actualClose": 344.4986,
+          "predictedClose": 341.9106,
+          "error": 2.588
+        },
+        {
+          "date": "2026-08-20",
+          "open": 342.8396,
+          "actualClose": 340.4512,
+          "predictedClose": 342.5091,
+          "error": 2.0579
+        },
+        {
+          "date": "2026-08-21",
+          "open": 342.3599,
+          "actualClose": 344.5985,
+          "predictedClose": 342.0303,
+          "error": 2.5682
+        },
+        {
+          "date": "2026-08-24",
+          "open": 343.3993,
+          "actualClose": 347.8364,
+          "predictedClose": 343.0678,
+          "error": 4.7686
+        },
+        {
+          "date": "2026-08-25",
+          "open": 349.4154,
+          "actualClose": 346.7371,
+          "predictedClose": 349.0733,
+          "error": 2.3362
+        },
+        {
+          "date": "2026-08-26",
+          "open": 346.3973,
+          "actualClose": 341.7803,
+          "predictedClose": 346.0605,
+          "error": 4.2802
+        },
+        {
+          "date": "2026-08-27",
+          "open": 339.4518,
+          "actualClose": 340.4312,
+          "predictedClose": 339.1273,
+          "error": 1.3039
+        },
+        {
+          "date": "2026-08-28",
+          "open": 340.4911,
+          "actualClose": 346.3674,
+          "predictedClose": 340.1648,
+          "error": 6.2026
+        },
+        {
+          "date": "2026-08-31",
+          "open": 343.6091,
+          "actualClose": 339.132,
+          "predictedClose": 343.2773,
+          "error": 4.1453
+        },
+        {
+          "date": "2026-09-01",
+          "open": 335.7842,
+          "actualClose": 334.8048,
+          "predictedClose": 335.4662,
+          "error": 0.6614
+        },
+        {
+          "date": "2026-09-02",
+          "open": 333.8454,
+          "actualClose": 336.9034,
+          "predictedClose": 333.5308,
+          "error": 3.3726
+        },
+        {
+          "date": "2026-09-03",
+          "open": 340.3412,
+          "actualClose": 342.26,
+          "predictedClose": 340.0151,
+          "error": 2.2449
+        },
+        {
+          "date": "2026-09-04",
+          "open": 342.47,
+          "actualClose": 338.46,
+          "predictedClose": 342.1401,
+          "error": 3.6801
+        },
+        {
+          "date": "2026-09-08",
+          "open": 335.42,
+          "actualClose": 338.36,
+          "predictedClose": 335.1026,
+          "error": 3.2574
+        },
+        {
+          "date": "2026-09-09",
+          "open": 331.65,
+          "actualClose": 330.65,
+          "predictedClose": 331.3393,
+          "error": 0.6893
+        },
+        {
+          "date": "2026-09-10",
+          "open": 328.23,
+          "actualClose": 332.6,
+          "predictedClose": 327.9254,
+          "error": 4.6746
+        },
+        {
+          "date": "2026-09-11",
+          "open": 335.03,
+          "actualClose": 338.5,
+          "predictedClose": 334.7133,
+          "error": 3.7867
+        },
+        {
+          "date": "2026-09-14",
+          "open": 343.12,
+          "actualClose": 349.39,
+          "predictedClose": 342.789,
+          "error": 6.601
+        },
+        {
+          "date": "2026-09-15",
+          "open": 346.8,
+          "actualClose": 344.98,
+          "predictedClose": 346.4625,
+          "error": 1.4825
+        },
+        {
+          "date": "2026-09-16",
+          "open": 347.08,
+          "actualClose": 342.87,
+          "predictedClose": 346.742,
+          "error": 3.872
+        },
+        {
+          "date": "2026-09-17",
+          "open": 348.68,
+          "actualClose": 347.33,
+          "predictedClose": 348.3391,
+          "error": 1.0091
+        },
+        {
+          "date": "2026-09-18",
+          "open": 357.31,
+          "actualClose": 349.54,
+          "predictedClose": 356.9539,
+          "error": 7.4139
+        },
+        {
+          "date": "2026-09-21",
+          "open": 350.64,
+          "actualClose": 354.97,
+          "predictedClose": 350.2957,
+          "error": 4.6743
+        },
+        {
+          "date": "2026-09-22",
+          "open": 357.65,
+          "actualClose": 351.16,
+          "predictedClose": 357.2932,
+          "error": 6.1332
+        },
+        {
+          "date": "2026-09-23",
+          "open": 349.86,
+          "actualClose": 337.83,
+          "predictedClose": 349.517,
+          "error": 11.687
+        }
+      ]
+    },
+    "multiple_linear": {
+      "model_key": "multiple_linear",
+      "model_name": "Multiple Linear Regression",
+      "description": "Multi-variable linear model incorporating Open, High, Low, and Volume.",
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ],
+      "formula_display": "Close = b0 + b1(Open) + b2(High) + b3(Low) + b4(Volume)",
+      "r2": 0.9972,
+      "r2_percentage": 99.72,
+      "mae": 1.6101,
+      "mse": 4.7126,
+      "rmse": 2.1709,
+      "mape": 0.5,
+      "test_samples": [
+        {
+          "date": "2026-06-30",
+          "open": 353.6427,
+          "actualClose": 357.1404,
+          "predictedClose": 354.4679,
+          "error": 2.6725
+        },
+        {
+          "date": "2026-07-01",
+          "open": 358.1398,
+          "actualClose": 360.978,
+          "predictedClose": 360.1353,
+          "error": 0.8427
+        },
+        {
+          "date": "2026-07-02",
+          "open": 359.2491,
+          "actualClose": 359.6788,
+          "predictedClose": 357.9049,
+          "error": 1.7739
+        },
+        {
+          "date": "2026-07-06",
+          "open": 361.3177,
+          "actualClose": 366.2246,
+          "predictedClose": 362.7958,
+          "error": 3.4288
+        },
+        {
+          "date": "2026-07-07",
+          "open": 368.8329,
+          "actualClose": 366.7942,
+          "predictedClose": 369.0868,
+          "error": 2.2926
+        },
+        {
+          "date": "2026-07-08",
+          "open": 364.5257,
+          "actualClose": 361.6875,
+          "predictedClose": 361.3724,
+          "error": 0.3151
+        },
+        {
+          "date": "2026-07-09",
+          "open": 354.0824,
+          "actualClose": 358.6595,
+          "predictedClose": 355.5605,
+          "error": 3.099
+        },
+        {
+          "date": "2026-07-10",
+          "open": 357.3003,
+          "actualClose": 356.9506,
+          "predictedClose": 353.6791,
+          "error": 3.2715
+        },
+        {
+          "date": "2026-07-13",
+          "open": 355.9612,
+          "actualClose": 352.2836,
+          "predictedClose": 353.8702,
+          "error": 1.5866
+        },
+        {
+          "date": "2026-07-14",
+          "open": 350.9744,
+          "actualClose": 359.2791,
+          "predictedClose": 357.7922,
+          "error": 1.4869
+        },
+        {
+          "date": "2026-07-15",
+          "open": 357.7401,
+          "actualClose": 370.6818,
+          "predictedClose": 369.5396,
+          "error": 1.1422
+        },
+        {
+          "date": "2026-07-16",
+          "open": 372.8204,
+          "actualClose": 354.2323,
+          "predictedClose": 357.2977,
+          "error": 3.0654
+        },
+        {
+          "date": "2026-07-17",
+          "open": 345.7777,
+          "actualClose": 346.5472,
+          "predictedClose": 343.9461,
+          "error": 2.6011
+        },
+        {
+          "date": "2026-07-20",
+          "open": 350.6546,
+          "actualClose": 351.7639,
+          "predictedClose": 357.1384,
+          "error": 5.3745
+        },
+        {
+          "date": "2026-07-21",
+          "open": 351.0943,
+          "actualClose": 346.927,
+          "predictedClose": 347.6335,
+          "error": 0.7065
+        },
+        {
+          "date": "2026-07-22",
+          "open": 347.9363,
+          "actualClose": 341.8702,
+          "predictedClose": 344.0462,
+          "error": 2.176
+        },
+        {
+          "date": "2026-07-23",
+          "open": 320.9237,
+          "actualClose": 317.4859,
+          "predictedClose": 318.3676,
+          "error": 0.8817
+        },
+        {
+          "date": "2026-07-24",
+          "open": 318.2155,
+          "actualClose": 319.5346,
+          "predictedClose": 321.7777,
+          "error": 2.2431
+        },
+        {
+          "date": "2026-07-27",
+          "open": 324.8312,
+          "actualClose": 326.3502,
+          "predictedClose": 328.5357,
+          "error": 2.1855
+        },
+        {
+          "date": "2026-07-28",
+          "open": 327.6894,
+          "actualClose": 333.4956,
+          "predictedClose": 330.9603,
+          "error": 2.5353
+        },
+        {
+          "date": "2026-07-29",
+          "open": 334.455,
+          "actualClose": 336.4937,
+          "predictedClose": 337.9574,
+          "error": 1.4637
+        },
+        {
+          "date": "2026-07-30",
+          "open": 333.9853,
+          "actualClose": 333.4457,
+          "predictedClose": 332.6442,
+          "error": 0.8015
+        },
+        {
+          "date": "2026-07-31",
+          "open": 340.6111,
+          "actualClose": 355.9012,
+          "predictedClose": 353.4399,
+          "error": 2.4613
+        },
+        {
+          "date": "2026-08-03",
+          "open": 365.2153,
+          "actualClose": 373.2701,
+          "predictedClose": 372.0808,
+          "error": 1.1893
+        },
+        {
+          "date": "2026-08-04",
+          "open": 367.9835,
+          "actualClose": 377.4074,
+          "predictedClose": 376.8031,
+          "error": 0.6043
+        },
+        {
+          "date": "2026-08-05",
+          "open": 383.0937,
+          "actualClose": 362.1972,
+          "predictedClose": 361.9123,
+          "error": 0.2849
+        },
+        {
+          "date": "2026-08-06",
+          "open": 360.5383,
+          "actualClose": 357.5202,
+          "predictedClose": 359.9721,
+          "error": 2.4519
+        },
+        {
+          "date": "2026-08-07",
+          "open": 356.4908,
+          "actualClose": 354.0724,
+          "predictedClose": 355.8301,
+          "error": 1.7577
+        },
+        {
+          "date": "2026-08-10",
+          "open": 354.9519,
+          "actualClose": 357.2903,
+          "predictedClose": 354.8724,
+          "error": 2.4179
+        },
+        {
+          "date": "2026-08-11",
+          "open": 355.6614,
+          "actualClose": 343.5791,
+          "predictedClose": 346.0647,
+          "error": 2.4856
+        },
+        {
+          "date": "2026-08-12",
+          "open": 346.0875,
+          "actualClose": 343.3193,
+          "predictedClose": 341.8267,
+          "error": 1.4926
+        },
+        {
+          "date": "2026-08-13",
+          "open": 345.5479,
+          "actualClose": 346.1375,
+          "predictedClose": 345.648,
+          "error": 0.4895
+        },
+        {
+          "date": "2026-08-14",
+          "open": 346.5772,
+          "actualClose": 345.6778,
+          "predictedClose": 347.5598,
+          "error": 1.882
+        },
+        {
+          "date": "2026-08-17",
+          "open": 346.0476,
+          "actualClose": 343.779,
+          "predictedClose": 343.3123,
+          "error": 0.4667
+        },
+        {
+          "date": "2026-08-18",
+          "open": 342.1901,
+          "actualClose": 343.9789,
+          "predictedClose": 342.3397,
+          "error": 1.6392
+        },
+        {
+          "date": "2026-08-19",
+          "open": 342.24,
+          "actualClose": 344.4986,
+          "predictedClose": 344.1058,
+          "error": 0.3928
+        },
+        {
+          "date": "2026-08-20",
+          "open": 342.8396,
+          "actualClose": 340.4512,
+          "predictedClose": 339.8729,
+          "error": 0.5783
+        },
+        {
+          "date": "2026-08-21",
+          "open": 342.3599,
+          "actualClose": 344.5985,
+          "predictedClose": 343.4173,
+          "error": 1.1812
+        },
+        {
+          "date": "2026-08-24",
+          "open": 343.3993,
+          "actualClose": 347.8364,
+          "predictedClose": 348.6195,
+          "error": 0.7831
+        },
+        {
+          "date": "2026-08-25",
+          "open": 349.4154,
+          "actualClose": 346.7371,
+          "predictedClose": 346.5823,
+          "error": 0.1548
+        },
+        {
+          "date": "2026-08-26",
+          "open": 346.3973,
+          "actualClose": 341.7803,
+          "predictedClose": 341.3647,
+          "error": 0.4156
+        },
+        {
+          "date": "2026-08-27",
+          "open": 339.4518,
+          "actualClose": 340.4312,
+          "predictedClose": 340.1591,
+          "error": 0.2721
+        },
+        {
+          "date": "2026-08-28",
+          "open": 340.4911,
+          "actualClose": 346.3674,
+          "predictedClose": 346.627,
+          "error": 0.2596
+        },
+        {
+          "date": "2026-08-31",
+          "open": 343.6091,
+          "actualClose": 339.132,
+          "predictedClose": 338.7524,
+          "error": 0.3796
+        },
+        {
+          "date": "2026-09-01",
+          "open": 335.7842,
+          "actualClose": 334.8048,
+          "predictedClose": 334.3699,
+          "error": 0.4349
+        },
+        {
+          "date": "2026-09-02",
+          "open": 333.8454,
+          "actualClose": 336.9034,
+          "predictedClose": 337.4355,
+          "error": 0.5321
+        },
+        {
+          "date": "2026-09-03",
+          "open": 340.3412,
+          "actualClose": 342.26,
+          "predictedClose": 343.1778,
+          "error": 0.9178
+        },
+        {
+          "date": "2026-09-04",
+          "open": 342.47,
+          "actualClose": 338.46,
+          "predictedClose": 338.9208,
+          "error": 0.4608
+        },
+        {
+          "date": "2026-09-08",
+          "open": 335.42,
+          "actualClose": 338.36,
+          "predictedClose": 336.942,
+          "error": 1.418
+        },
+        {
+          "date": "2026-09-09",
+          "open": 331.65,
+          "actualClose": 330.65,
+          "predictedClose": 328.8041,
+          "error": 1.8459
+        },
+        {
+          "date": "2026-09-10",
+          "open": 328.23,
+          "actualClose": 332.6,
+          "predictedClose": 331.7372,
+          "error": 0.8628
+        },
+        {
+          "date": "2026-09-11",
+          "open": 335.03,
+          "actualClose": 338.5,
+          "predictedClose": 341.1743,
+          "error": 2.6743
+        },
+        {
+          "date": "2026-09-14",
+          "open": 343.12,
+          "actualClose": 349.39,
+          "predictedClose": 347.5634,
+          "error": 1.8266
+        },
+        {
+          "date": "2026-09-15",
+          "open": 346.8,
+          "actualClose": 344.98,
+          "predictedClose": 344.4799,
+          "error": 0.5001
+        },
+        {
+          "date": "2026-09-16",
+          "open": 347.08,
+          "actualClose": 342.87,
+          "predictedClose": 342.8456,
+          "error": 0.0244
+        },
+        {
+          "date": "2026-09-17",
+          "open": 348.68,
+          "actualClose": 347.33,
+          "predictedClose": 345.4461,
+          "error": 1.8839
+        },
+        {
+          "date": "2026-09-18",
+          "open": 357.31,
+          "actualClose": 349.54,
+          "predictedClose": 351.6479,
+          "error": 2.1079
+        },
+        {
+          "date": "2026-09-21",
+          "open": 350.64,
+          "actualClose": 354.97,
+          "predictedClose": 354.7566,
+          "error": 0.2134
+        },
+        {
+          "date": "2026-09-22",
+          "open": 357.65,
+          "actualClose": 351.16,
+          "predictedClose": 356.5096,
+          "error": 5.3496
+        },
+        {
+          "date": "2026-09-23",
+          "open": 349.86,
+          "actualClose": 337.83,
+          "predictedClose": 339.7379,
+          "error": 1.9079
+        }
+      ]
+    },
+    "polynomial": {
+      "model_key": "polynomial",
+      "model_name": "Polynomial Regression (Degree 3)",
+      "description": "Non-linear regression capturing curved price trends using degree 3 polynomial feature transformations.",
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ],
+      "formula_display": "Close = b0 + b1(X1) + b2(X1^2) + b3(X1^3) + ... + bn(Xn^3)",
+      "r2": 0.5517,
+      "r2_percentage": 55.17,
+      "mae": 14.1252,
+      "mse": 757.0624,
+      "rmse": 27.5148,
+      "mape": 4.14,
+      "test_samples": [
+        {
+          "date": "2026-06-30",
+          "open": 353.6427,
+          "actualClose": 357.1404,
+          "predictedClose": 340.1204,
+          "error": 17.02
+        },
+        {
+          "date": "2026-07-01",
+          "open": 358.1398,
+          "actualClose": 360.978,
+          "predictedClose": 349.4522,
+          "error": 11.5258
+        },
+        {
+          "date": "2026-07-02",
+          "open": 359.2491,
+          "actualClose": 359.6788,
+          "predictedClose": 326.3871,
+          "error": 33.2917
+        },
+        {
+          "date": "2026-07-06",
+          "open": 361.3177,
+          "actualClose": 366.2246,
+          "predictedClose": 334.957,
+          "error": 31.2676
+        },
+        {
+          "date": "2026-07-07",
+          "open": 368.8329,
+          "actualClose": 366.7942,
+          "predictedClose": 353.7766,
+          "error": 13.0176
+        },
+        {
+          "date": "2026-07-08",
+          "open": 364.5257,
+          "actualClose": 361.6875,
+          "predictedClose": 337.9291,
+          "error": 23.7584
+        },
+        {
+          "date": "2026-07-09",
+          "open": 354.0824,
+          "actualClose": 358.6595,
+          "predictedClose": 339.5806,
+          "error": 19.0789
+        },
+        {
+          "date": "2026-07-10",
+          "open": 357.3003,
+          "actualClose": 356.9506,
+          "predictedClose": 348.1411,
+          "error": 8.8095
+        },
+        {
+          "date": "2026-07-13",
+          "open": 355.9612,
+          "actualClose": 352.2836,
+          "predictedClose": 344.0027,
+          "error": 8.2809
+        },
+        {
+          "date": "2026-07-14",
+          "open": 350.9744,
+          "actualClose": 359.2791,
+          "predictedClose": 347.5088,
+          "error": 11.7703
+        },
+        {
+          "date": "2026-07-15",
+          "open": 357.7401,
+          "actualClose": 370.6818,
+          "predictedClose": 302.9772,
+          "error": 67.7046
+        },
+        {
+          "date": "2026-07-16",
+          "open": 372.8204,
+          "actualClose": 354.2323,
+          "predictedClose": 250.686,
+          "error": 103.5463
+        },
+        {
+          "date": "2026-07-17",
+          "open": 345.7777,
+          "actualClose": 346.5472,
+          "predictedClose": 333.4791,
+          "error": 13.0681
+        },
+        {
+          "date": "2026-07-20",
+          "open": 350.6546,
+          "actualClose": 351.7639,
+          "predictedClose": 346.5474,
+          "error": 5.2165
+        },
+        {
+          "date": "2026-07-21",
+          "open": 351.0943,
+          "actualClose": 346.927,
+          "predictedClose": 342.2714,
+          "error": 4.6556
+        },
+        {
+          "date": "2026-07-22",
+          "open": 347.9363,
+          "actualClose": 341.8702,
+          "predictedClose": 333.9372,
+          "error": 7.933
+        },
+        {
+          "date": "2026-07-23",
+          "open": 320.9237,
+          "actualClose": 317.4859,
+          "predictedClose": 304.6198,
+          "error": 12.8661
+        },
+        {
+          "date": "2026-07-24",
+          "open": 318.2155,
+          "actualClose": 319.5346,
+          "predictedClose": 316.1854,
+          "error": 3.3492
+        },
+        {
+          "date": "2026-07-27",
+          "open": 324.8312,
+          "actualClose": 326.3502,
+          "predictedClose": 323.133,
+          "error": 3.2172
+        },
+        {
+          "date": "2026-07-28",
+          "open": 327.6894,
+          "actualClose": 333.4956,
+          "predictedClose": 303.0735,
+          "error": 30.4221
+        },
+        {
+          "date": "2026-07-29",
+          "open": 334.455,
+          "actualClose": 336.4937,
+          "predictedClose": 313.8768,
+          "error": 22.6169
+        },
+        {
+          "date": "2026-07-30",
+          "open": 333.9853,
+          "actualClose": 333.4457,
+          "predictedClose": 324.8716,
+          "error": 8.5741
+        },
+        {
+          "date": "2026-07-31",
+          "open": 340.6111,
+          "actualClose": 355.9012,
+          "predictedClose": 253.3915,
+          "error": 102.5097
+        },
+        {
+          "date": "2026-08-03",
+          "open": 365.2153,
+          "actualClose": 373.2701,
+          "predictedClose": 333.2859,
+          "error": 39.9842
+        },
+        {
+          "date": "2026-08-04",
+          "open": 367.9835,
+          "actualClose": 377.4074,
+          "predictedClose": 344.5861,
+          "error": 32.8213
+        },
+        {
+          "date": "2026-08-05",
+          "open": 383.0937,
+          "actualClose": 362.1972,
+          "predictedClose": 300.2681,
+          "error": 61.9291
+        },
+        {
+          "date": "2026-08-06",
+          "open": 360.5383,
+          "actualClose": 357.5202,
+          "predictedClose": 346.7944,
+          "error": 10.7258
+        },
+        {
+          "date": "2026-08-07",
+          "open": 356.4908,
+          "actualClose": 354.0724,
+          "predictedClose": 345.5391,
+          "error": 8.5333
+        },
+        {
+          "date": "2026-08-10",
+          "open": 354.9519,
+          "actualClose": 357.2903,
+          "predictedClose": 344.4349,
+          "error": 12.8554
+        },
+        {
+          "date": "2026-08-11",
+          "open": 355.6614,
+          "actualClose": 343.5791,
+          "predictedClose": 326.697,
+          "error": 16.8821
+        },
+        {
+          "date": "2026-08-12",
+          "open": 346.0875,
+          "actualClose": 343.3193,
+          "predictedClose": 339.0438,
+          "error": 4.2755
+        },
+        {
+          "date": "2026-08-13",
+          "open": 345.5479,
+          "actualClose": 346.1375,
+          "predictedClose": 335.8462,
+          "error": 10.2913
+        },
+        {
+          "date": "2026-08-14",
+          "open": 346.5772,
+          "actualClose": 345.6778,
+          "predictedClose": 338.1576,
+          "error": 7.5202
+        },
+        {
+          "date": "2026-08-17",
+          "open": 346.0476,
+          "actualClose": 343.779,
+          "predictedClose": 336.8832,
+          "error": 6.8958
+        },
+        {
+          "date": "2026-08-18",
+          "open": 342.1901,
+          "actualClose": 343.9789,
+          "predictedClose": 333.4764,
+          "error": 10.5025
+        },
+        {
+          "date": "2026-08-19",
+          "open": 342.24,
+          "actualClose": 344.4986,
+          "predictedClose": 335.5573,
+          "error": 8.9413
+        },
+        {
+          "date": "2026-08-20",
+          "open": 342.8396,
+          "actualClose": 340.4512,
+          "predictedClose": 334.2438,
+          "error": 6.2074
+        },
+        {
+          "date": "2026-08-21",
+          "open": 342.3599,
+          "actualClose": 344.5985,
+          "predictedClose": 334.6368,
+          "error": 9.9617
+        },
+        {
+          "date": "2026-08-24",
+          "open": 343.3993,
+          "actualClose": 347.8364,
+          "predictedClose": 336.9756,
+          "error": 10.8608
+        },
+        {
+          "date": "2026-08-25",
+          "open": 349.4154,
+          "actualClose": 346.7371,
+          "predictedClose": 340.0318,
+          "error": 6.7053
+        },
+        {
+          "date": "2026-08-26",
+          "open": 346.3973,
+          "actualClose": 341.7803,
+          "predictedClose": 339.2244,
+          "error": 2.5559
+        },
+        {
+          "date": "2026-08-27",
+          "open": 339.4518,
+          "actualClose": 340.4312,
+          "predictedClose": 329.0326,
+          "error": 11.3986
+        },
+        {
+          "date": "2026-08-28",
+          "open": 340.4911,
+          "actualClose": 346.3674,
+          "predictedClose": 337.4185,
+          "error": 8.9489
+        },
+        {
+          "date": "2026-08-31",
+          "open": 343.6091,
+          "actualClose": 339.132,
+          "predictedClose": 334.3758,
+          "error": 4.7562
+        },
+        {
+          "date": "2026-09-01",
+          "open": 335.7842,
+          "actualClose": 334.8048,
+          "predictedClose": 326.9883,
+          "error": 7.8165
+        },
+        {
+          "date": "2026-09-02",
+          "open": 333.8454,
+          "actualClose": 336.9034,
+          "predictedClose": 329.8965,
+          "error": 7.0069
+        },
+        {
+          "date": "2026-09-03",
+          "open": 340.3412,
+          "actualClose": 342.26,
+          "predictedClose": 334.8499,
+          "error": 7.4101
+        },
+        {
+          "date": "2026-09-04",
+          "open": 342.47,
+          "actualClose": 338.46,
+          "predictedClose": 333.0788,
+          "error": 5.3812
+        },
+        {
+          "date": "2026-09-08",
+          "open": 335.42,
+          "actualClose": 338.36,
+          "predictedClose": 328.5302,
+          "error": 9.8298
+        },
+        {
+          "date": "2026-09-09",
+          "open": 331.65,
+          "actualClose": 330.65,
+          "predictedClose": 324.1432,
+          "error": 6.5068
+        },
+        {
+          "date": "2026-09-10",
+          "open": 328.23,
+          "actualClose": 332.6,
+          "predictedClose": 325.8803,
+          "error": 6.7197
+        },
+        {
+          "date": "2026-09-11",
+          "open": 335.03,
+          "actualClose": 338.5,
+          "predictedClose": 334.9618,
+          "error": 3.5382
+        },
+        {
+          "date": "2026-09-14",
+          "open": 343.12,
+          "actualClose": 349.39,
+          "predictedClose": 339.5075,
+          "error": 9.8825
+        },
+        {
+          "date": "2026-09-15",
+          "open": 346.8,
+          "actualClose": 344.98,
+          "predictedClose": 337.1978,
+          "error": 7.7822
+        },
+        {
+          "date": "2026-09-16",
+          "open": 347.08,
+          "actualClose": 342.87,
+          "predictedClose": 334.3387,
+          "error": 8.5313
+        },
+        {
+          "date": "2026-09-17",
+          "open": 348.68,
+          "actualClose": 347.33,
+          "predictedClose": 339.5447,
+          "error": 7.7853
+        },
+        {
+          "date": "2026-09-18",
+          "open": 357.31,
+          "actualClose": 349.54,
+          "predictedClose": 331.538,
+          "error": 18.002
+        },
+        {
+          "date": "2026-09-21",
+          "open": 350.64,
+          "actualClose": 354.97,
+          "predictedClose": 343.3088,
+          "error": 11.6612
+        },
+        {
+          "date": "2026-09-22",
+          "open": 357.65,
+          "actualClose": 351.16,
+          "predictedClose": 291.8347,
+          "error": 59.3253
+        },
+        {
+          "date": "2026-09-23",
+          "open": 349.86,
+          "actualClose": 337.83,
+          "predictedClose": 337.4394,
+          "error": 0.3906
+        }
+      ]
+    },
+    "svr": {
+      "model_key": "svr",
+      "model_name": "Support Vector Regression (SVR - RBF)",
+      "description": "Support Vector Machine using Radial Basis Function kernel and StandardScaler pipeline.",
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ],
+      "formula_display": "SVR(Kernel=RBF, C=100.0, epsilon=0.1)",
+      "r2": -24.9388,
+      "r2_percentage": -2493.88,
+      "mae": 204.6435,
+      "mse": 43801.8352,
+      "rmse": 209.2889,
+      "mape": 63.11,
+      "test_samples": [
+        {
+          "date": "2026-06-30",
+          "open": 353.6427,
+          "actualClose": 357.1404,
+          "predictedClose": 114.2395,
+          "error": 242.9009
+        },
+        {
+          "date": "2026-07-01",
+          "open": 358.1398,
+          "actualClose": 360.978,
+          "predictedClose": 114.2395,
+          "error": 246.7385
+        },
+        {
+          "date": "2026-07-02",
+          "open": 359.2491,
+          "actualClose": 359.6788,
+          "predictedClose": 114.2395,
+          "error": 245.4393
+        },
+        {
+          "date": "2026-07-06",
+          "open": 361.3177,
+          "actualClose": 366.2246,
+          "predictedClose": 114.2395,
+          "error": 251.9851
+        },
+        {
+          "date": "2026-07-07",
+          "open": 368.8329,
+          "actualClose": 366.7942,
+          "predictedClose": 114.2395,
+          "error": 252.5547
+        },
+        {
+          "date": "2026-07-08",
+          "open": 364.5257,
+          "actualClose": 361.6875,
+          "predictedClose": 114.2395,
+          "error": 247.448
+        },
+        {
+          "date": "2026-07-09",
+          "open": 354.0824,
+          "actualClose": 358.6595,
+          "predictedClose": 114.2395,
+          "error": 244.42
+        },
+        {
+          "date": "2026-07-10",
+          "open": 357.3003,
+          "actualClose": 356.9506,
+          "predictedClose": 114.2395,
+          "error": 242.7111
+        },
+        {
+          "date": "2026-07-13",
+          "open": 355.9612,
+          "actualClose": 352.2836,
+          "predictedClose": 114.2395,
+          "error": 238.0441
+        },
+        {
+          "date": "2026-07-14",
+          "open": 350.9744,
+          "actualClose": 359.2791,
+          "predictedClose": 114.2395,
+          "error": 245.0396
+        },
+        {
+          "date": "2026-07-15",
+          "open": 357.7401,
+          "actualClose": 370.6818,
+          "predictedClose": 114.2395,
+          "error": 256.4423
+        },
+        {
+          "date": "2026-07-16",
+          "open": 372.8204,
+          "actualClose": 354.2323,
+          "predictedClose": 114.2395,
+          "error": 239.9928
+        },
+        {
+          "date": "2026-07-17",
+          "open": 345.7777,
+          "actualClose": 346.5472,
+          "predictedClose": 114.2395,
+          "error": 232.3077
+        },
+        {
+          "date": "2026-07-20",
+          "open": 350.6546,
+          "actualClose": 351.7639,
+          "predictedClose": 114.2395,
+          "error": 237.5244
+        },
+        {
+          "date": "2026-07-21",
+          "open": 351.0943,
+          "actualClose": 346.927,
+          "predictedClose": 114.2395,
+          "error": 232.6875
+        },
+        {
+          "date": "2026-07-22",
+          "open": 347.9363,
+          "actualClose": 341.8702,
+          "predictedClose": 114.2395,
+          "error": 227.6307
+        },
+        {
+          "date": "2026-07-23",
+          "open": 320.9237,
+          "actualClose": 317.4859,
+          "predictedClose": 114.2395,
+          "error": 203.2464
+        },
+        {
+          "date": "2026-07-24",
+          "open": 318.2155,
+          "actualClose": 319.5346,
+          "predictedClose": 114.2397,
+          "error": 205.2949
+        },
+        {
+          "date": "2026-07-27",
+          "open": 324.8312,
+          "actualClose": 326.3502,
+          "predictedClose": 114.2395,
+          "error": 212.1107
+        },
+        {
+          "date": "2026-07-28",
+          "open": 327.6894,
+          "actualClose": 333.4956,
+          "predictedClose": 114.2395,
+          "error": 219.2561
+        },
+        {
+          "date": "2026-07-29",
+          "open": 334.455,
+          "actualClose": 336.4937,
+          "predictedClose": 114.2395,
+          "error": 222.2542
+        },
+        {
+          "date": "2026-07-30",
+          "open": 333.9853,
+          "actualClose": 333.4457,
+          "predictedClose": 114.2395,
+          "error": 219.2062
+        },
+        {
+          "date": "2026-07-31",
+          "open": 340.6111,
+          "actualClose": 355.9012,
+          "predictedClose": 114.2395,
+          "error": 241.6617
+        },
+        {
+          "date": "2026-08-03",
+          "open": 365.2153,
+          "actualClose": 373.2701,
+          "predictedClose": 114.2395,
+          "error": 259.0306
+        },
+        {
+          "date": "2026-08-04",
+          "open": 367.9835,
+          "actualClose": 377.4074,
+          "predictedClose": 114.2395,
+          "error": 263.1679
+        },
+        {
+          "date": "2026-08-05",
+          "open": 383.0937,
+          "actualClose": 362.1972,
+          "predictedClose": 114.2395,
+          "error": 247.9577
+        },
+        {
+          "date": "2026-08-06",
+          "open": 360.5383,
+          "actualClose": 357.5202,
+          "predictedClose": 114.2395,
+          "error": 243.2807
+        },
+        {
+          "date": "2026-08-07",
+          "open": 356.4908,
+          "actualClose": 354.0724,
+          "predictedClose": 114.2395,
+          "error": 239.8329
+        },
+        {
+          "date": "2026-08-10",
+          "open": 354.9519,
+          "actualClose": 357.2903,
+          "predictedClose": 114.2395,
+          "error": 243.0508
+        },
+        {
+          "date": "2026-08-11",
+          "open": 355.6614,
+          "actualClose": 343.5791,
+          "predictedClose": 114.2395,
+          "error": 229.3396
+        },
+        {
+          "date": "2026-08-12",
+          "open": 346.0875,
+          "actualClose": 343.3193,
+          "predictedClose": 114.2395,
+          "error": 229.0798
+        },
+        {
+          "date": "2026-08-13",
+          "open": 345.5479,
+          "actualClose": 346.1375,
+          "predictedClose": 114.2395,
+          "error": 231.898
+        },
+        {
+          "date": "2026-08-14",
+          "open": 346.5772,
+          "actualClose": 345.6778,
+          "predictedClose": 114.2395,
+          "error": 231.4383
+        },
+        {
+          "date": "2026-08-17",
+          "open": 346.0476,
+          "actualClose": 343.779,
+          "predictedClose": 114.2395,
+          "error": 229.5395
+        },
+        {
+          "date": "2026-08-18",
+          "open": 342.1901,
+          "actualClose": 343.9789,
+          "predictedClose": 114.2395,
+          "error": 229.7394
+        },
+        {
+          "date": "2026-08-19",
+          "open": 342.24,
+          "actualClose": 344.4986,
+          "predictedClose": 114.2395,
+          "error": 230.2591
+        },
+        {
+          "date": "2026-08-20",
+          "open": 342.8396,
+          "actualClose": 340.4512,
+          "predictedClose": 114.2395,
+          "error": 226.2117
+        },
+        {
+          "date": "2026-08-21",
+          "open": 342.3599,
+          "actualClose": 344.5985,
+          "predictedClose": 114.2395,
+          "error": 230.359
+        },
+        {
+          "date": "2026-08-24",
+          "open": 343.3993,
+          "actualClose": 347.8364,
+          "predictedClose": 114.2395,
+          "error": 233.5969
+        },
+        {
+          "date": "2026-08-25",
+          "open": 349.4154,
+          "actualClose": 346.7371,
+          "predictedClose": 114.2395,
+          "error": 232.4976
+        },
+        {
+          "date": "2026-08-26",
+          "open": 346.3973,
+          "actualClose": 341.7803,
+          "predictedClose": 114.2395,
+          "error": 227.5408
+        },
+        {
+          "date": "2026-08-27",
+          "open": 339.4518,
+          "actualClose": 340.4312,
+          "predictedClose": 114.2395,
+          "error": 226.1917
+        },
+        {
+          "date": "2026-08-28",
+          "open": 340.4911,
+          "actualClose": 346.3674,
+          "predictedClose": 114.2395,
+          "error": 232.1279
+        },
+        {
+          "date": "2026-08-31",
+          "open": 343.6091,
+          "actualClose": 339.132,
+          "predictedClose": 114.2395,
+          "error": 224.8925
+        },
+        {
+          "date": "2026-09-01",
+          "open": 335.7842,
+          "actualClose": 334.8048,
+          "predictedClose": 114.2395,
+          "error": 220.5653
+        },
+        {
+          "date": "2026-09-02",
+          "open": 333.8454,
+          "actualClose": 336.9034,
+          "predictedClose": 114.2395,
+          "error": 222.6639
+        },
+        {
+          "date": "2026-09-03",
+          "open": 340.3412,
+          "actualClose": 342.26,
+          "predictedClose": 114.2395,
+          "error": 228.0205
+        },
+        {
+          "date": "2026-09-04",
+          "open": 342.47,
+          "actualClose": 338.46,
+          "predictedClose": 114.2395,
+          "error": 224.2205
+        },
+        {
+          "date": "2026-09-08",
+          "open": 335.42,
+          "actualClose": 338.36,
+          "predictedClose": 114.2395,
+          "error": 224.1205
+        },
+        {
+          "date": "2026-09-09",
+          "open": 331.65,
+          "actualClose": 330.65,
+          "predictedClose": 114.2395,
+          "error": 216.4105
+        },
+        {
+          "date": "2026-09-10",
+          "open": 328.23,
+          "actualClose": 332.6,
+          "predictedClose": 114.2395,
+          "error": 218.3605
+        },
+        {
+          "date": "2026-09-11",
+          "open": 335.03,
+          "actualClose": 338.5,
+          "predictedClose": 114.2395,
+          "error": 224.2605
+        },
+        {
+          "date": "2026-09-14",
+          "open": 343.12,
+          "actualClose": 349.39,
+          "predictedClose": 114.2395,
+          "error": 235.1505
+        },
+        {
+          "date": "2026-09-15",
+          "open": 346.8,
+          "actualClose": 344.98,
+          "predictedClose": 114.2395,
+          "error": 230.7405
+        },
+        {
+          "date": "2026-09-16",
+          "open": 347.08,
+          "actualClose": 342.87,
+          "predictedClose": 114.2395,
+          "error": 228.6305
+        },
+        {
+          "date": "2026-09-17",
+          "open": 348.68,
+          "actualClose": 347.33,
+          "predictedClose": 114.2395,
+          "error": 233.0905
+        },
+        {
+          "date": "2026-09-18",
+          "open": 357.31,
+          "actualClose": 349.54,
+          "predictedClose": 114.2395,
+          "error": 235.3005
+        },
+        {
+          "date": "2026-09-21",
+          "open": 350.64,
+          "actualClose": 354.97,
+          "predictedClose": 114.2395,
+          "error": 240.7305
+        },
+        {
+          "date": "2026-09-22",
+          "open": 357.65,
+          "actualClose": 351.16,
+          "predictedClose": 114.2395,
+          "error": 236.9205
+        },
+        {
+          "date": "2026-09-23",
+          "open": 349.86,
+          "actualClose": 337.83,
+          "predictedClose": 114.2395,
+          "error": 223.5905
+        }
+      ]
+    },
+    "random_forest": {
+      "model_key": "random_forest",
+      "model_name": "Random Forest Regressor",
+      "description": "Ensemble decision tree regressor averaging predictions across 100 decision trees.",
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ],
+      "formula_display": "RandomForestRegressor(n_estimators=100, max_depth=10)",
+      "r2": -10.3591,
+      "r2_percentage": -1035.91,
+      "mae": 132.2651,
+      "mse": 19181.6577,
+      "rmse": 138.4979,
+      "mape": 40.24,
+      "test_samples": [
+        {
+          "date": "2026-06-30",
+          "open": 353.6427,
+          "actualClose": 357.1404,
+          "predictedClose": 188.0112,
+          "error": 169.1292
+        },
+        {
+          "date": "2026-07-01",
+          "open": 358.1398,
+          "actualClose": 360.978,
+          "predictedClose": 188.0791,
+          "error": 172.8989
+        },
+        {
+          "date": "2026-07-02",
+          "open": 359.2491,
+          "actualClose": 359.6788,
+          "predictedClose": 188.0791,
+          "error": 171.5997
+        },
+        {
+          "date": "2026-07-06",
+          "open": 361.3177,
+          "actualClose": 366.2246,
+          "predictedClose": 188.0791,
+          "error": 178.1455
+        },
+        {
+          "date": "2026-07-07",
+          "open": 368.8329,
+          "actualClose": 366.7942,
+          "predictedClose": 188.0741,
+          "error": 178.7201
+        },
+        {
+          "date": "2026-07-08",
+          "open": 364.5257,
+          "actualClose": 361.6875,
+          "predictedClose": 188.0725,
+          "error": 173.615
+        },
+        {
+          "date": "2026-07-09",
+          "open": 354.0824,
+          "actualClose": 358.6595,
+          "predictedClose": 188.0791,
+          "error": 170.5804
+        },
+        {
+          "date": "2026-07-10",
+          "open": 357.3003,
+          "actualClose": 356.9506,
+          "predictedClose": 188.261,
+          "error": 168.6896
+        },
+        {
+          "date": "2026-07-13",
+          "open": 355.9612,
+          "actualClose": 352.2836,
+          "predictedClose": 188.2651,
+          "error": 164.0185
+        },
+        {
+          "date": "2026-07-14",
+          "open": 350.9744,
+          "actualClose": 359.2791,
+          "predictedClose": 188.261,
+          "error": 171.0181
+        },
+        {
+          "date": "2026-07-15",
+          "open": 357.7401,
+          "actualClose": 370.6818,
+          "predictedClose": 188.0112,
+          "error": 182.6706
+        },
+        {
+          "date": "2026-07-16",
+          "open": 372.8204,
+          "actualClose": 354.2323,
+          "predictedClose": 188.0112,
+          "error": 166.2211
+        },
+        {
+          "date": "2026-07-17",
+          "open": 345.7777,
+          "actualClose": 346.5472,
+          "predictedClose": 188.0112,
+          "error": 158.536
+        },
+        {
+          "date": "2026-07-20",
+          "open": 350.6546,
+          "actualClose": 351.7639,
+          "predictedClose": 188.0791,
+          "error": 163.6848
+        },
+        {
+          "date": "2026-07-21",
+          "open": 351.0943,
+          "actualClose": 346.927,
+          "predictedClose": 188.0741,
+          "error": 158.8529
+        },
+        {
+          "date": "2026-07-22",
+          "open": 347.9363,
+          "actualClose": 341.8702,
+          "predictedClose": 188.0112,
+          "error": 153.859
+        },
+        {
+          "date": "2026-07-23",
+          "open": 320.9237,
+          "actualClose": 317.4859,
+          "predictedClose": 188.0112,
+          "error": 129.4747
+        },
+        {
+          "date": "2026-07-24",
+          "open": 318.2155,
+          "actualClose": 319.5346,
+          "predictedClose": 188.0112,
+          "error": 131.5234
+        },
+        {
+          "date": "2026-07-27",
+          "open": 324.8312,
+          "actualClose": 326.3502,
+          "predictedClose": 188.0112,
+          "error": 138.339
+        },
+        {
+          "date": "2026-07-28",
+          "open": 327.6894,
+          "actualClose": 333.4956,
+          "predictedClose": 188.0112,
+          "error": 145.4844
+        },
+        {
+          "date": "2026-07-29",
+          "open": 334.455,
+          "actualClose": 336.4937,
+          "predictedClose": 188.0112,
+          "error": 148.4825
+        },
+        {
+          "date": "2026-07-30",
+          "open": 333.9853,
+          "actualClose": 333.4457,
+          "predictedClose": 188.0112,
+          "error": 145.4345
+        },
+        {
+          "date": "2026-07-31",
+          "open": 340.6111,
+          "actualClose": 355.9012,
+          "predictedClose": 188.0112,
+          "error": 167.89
+        },
+        {
+          "date": "2026-08-03",
+          "open": 365.2153,
+          "actualClose": 373.2701,
+          "predictedClose": 188.0112,
+          "error": 185.2589
+        },
+        {
+          "date": "2026-08-04",
+          "open": 367.9835,
+          "actualClose": 377.4074,
+          "predictedClose": 188.0112,
+          "error": 189.3962
+        },
+        {
+          "date": "2026-08-05",
+          "open": 383.0937,
+          "actualClose": 362.1972,
+          "predictedClose": 188.0112,
+          "error": 174.186
+        },
+        {
+          "date": "2026-08-06",
+          "open": 360.5383,
+          "actualClose": 357.5202,
+          "predictedClose": 188.0791,
+          "error": 169.4411
+        },
+        {
+          "date": "2026-08-07",
+          "open": 356.4908,
+          "actualClose": 354.0724,
+          "predictedClose": 188.211,
+          "error": 165.8614
+        },
+        {
+          "date": "2026-08-10",
+          "open": 354.9519,
+          "actualClose": 357.2903,
+          "predictedClose": 188.211,
+          "error": 169.0793
+        },
+        {
+          "date": "2026-08-11",
+          "open": 355.6614,
+          "actualClose": 343.5791,
+          "predictedClose": 188.0112,
+          "error": 155.5679
+        },
+        {
+          "date": "2026-08-12",
+          "open": 346.0875,
+          "actualClose": 343.3193,
+          "predictedClose": 188.0791,
+          "error": 155.2402
+        },
+        {
+          "date": "2026-08-13",
+          "open": 345.5479,
+          "actualClose": 346.1375,
+          "predictedClose": 188.2079,
+          "error": 157.9296
+        },
+        {
+          "date": "2026-08-14",
+          "open": 346.5772,
+          "actualClose": 345.6778,
+          "predictedClose": 188.2079,
+          "error": 157.4699
+        },
+        {
+          "date": "2026-08-17",
+          "open": 346.0476,
+          "actualClose": 343.779,
+          "predictedClose": 188.261,
+          "error": 155.518
+        },
+        {
+          "date": "2026-08-18",
+          "open": 342.1901,
+          "actualClose": 343.9789,
+          "predictedClose": 188.211,
+          "error": 155.7679
+        },
+        {
+          "date": "2026-08-19",
+          "open": 342.24,
+          "actualClose": 344.4986,
+          "predictedClose": 188.211,
+          "error": 156.2876
+        },
+        {
+          "date": "2026-08-20",
+          "open": 342.8396,
+          "actualClose": 340.4512,
+          "predictedClose": 188.211,
+          "error": 152.2402
+        },
+        {
+          "date": "2026-08-21",
+          "open": 342.3599,
+          "actualClose": 344.5985,
+          "predictedClose": 188.211,
+          "error": 156.3875
+        },
+        {
+          "date": "2026-08-24",
+          "open": 343.3993,
+          "actualClose": 347.8364,
+          "predictedClose": 188.0791,
+          "error": 159.7573
+        },
+        {
+          "date": "2026-08-25",
+          "open": 349.4154,
+          "actualClose": 346.7371,
+          "predictedClose": 188.211,
+          "error": 158.5261
+        },
+        {
+          "date": "2026-08-26",
+          "open": 346.3973,
+          "actualClose": 341.7803,
+          "predictedClose": 188.211,
+          "error": 153.5693
+        },
+        {
+          "date": "2026-08-27",
+          "open": 339.4518,
+          "actualClose": 340.4312,
+          "predictedClose": 188.0741,
+          "error": 152.3571
+        },
+        {
+          "date": "2026-08-28",
+          "open": 340.4911,
+          "actualClose": 346.3674,
+          "predictedClose": 188.0791,
+          "error": 158.2883
+        },
+        {
+          "date": "2026-08-31",
+          "open": 343.6091,
+          "actualClose": 339.132,
+          "predictedClose": 188.0112,
+          "error": 151.1208
+        },
+        {
+          "date": "2026-09-01",
+          "open": 335.7842,
+          "actualClose": 334.8048,
+          "predictedClose": 188.0741,
+          "error": 146.7307
+        },
+        {
+          "date": "2026-09-02",
+          "open": 333.8454,
+          "actualClose": 336.9034,
+          "predictedClose": 188.0741,
+          "error": 148.8293
+        },
+        {
+          "date": "2026-09-03",
+          "open": 340.3412,
+          "actualClose": 342.26,
+          "predictedClose": 188.211,
+          "error": 154.049
+        },
+        {
+          "date": "2026-09-04",
+          "open": 342.47,
+          "actualClose": 338.46,
+          "predictedClose": 188.0741,
+          "error": 150.3859
+        },
+        {
+          "date": "2026-09-08",
+          "open": 335.42,
+          "actualClose": 338.36,
+          "predictedClose": 188.0741,
+          "error": 150.2859
+        },
+        {
+          "date": "2026-09-09",
+          "open": 331.65,
+          "actualClose": 330.65,
+          "predictedClose": 188.0112,
+          "error": 142.6388
+        },
+        {
+          "date": "2026-09-10",
+          "open": 328.23,
+          "actualClose": 332.6,
+          "predictedClose": 188.0741,
+          "error": 144.5259
+        },
+        {
+          "date": "2026-09-11",
+          "open": 335.03,
+          "actualClose": 338.5,
+          "predictedClose": 188.0791,
+          "error": 150.4209
+        },
+        {
+          "date": "2026-09-14",
+          "open": 343.12,
+          "actualClose": 349.39,
+          "predictedClose": 188.0112,
+          "error": 161.3788
+        },
+        {
+          "date": "2026-09-15",
+          "open": 346.8,
+          "actualClose": 344.98,
+          "predictedClose": 188.1274,
+          "error": 156.8526
+        },
+        {
+          "date": "2026-09-16",
+          "open": 347.08,
+          "actualClose": 342.87,
+          "predictedClose": 188.211,
+          "error": 154.659
+        },
+        {
+          "date": "2026-09-17",
+          "open": 348.68,
+          "actualClose": 347.33,
+          "predictedClose": 188.211,
+          "error": 159.119
+        },
+        {
+          "date": "2026-09-18",
+          "open": 357.31,
+          "actualClose": 349.54,
+          "predictedClose": 188.0112,
+          "error": 161.5288
+        },
+        {
+          "date": "2026-09-21",
+          "open": 350.64,
+          "actualClose": 354.97,
+          "predictedClose": 188.0112,
+          "error": 166.9588
+        },
+        {
+          "date": "2026-09-22",
+          "open": 357.65,
+          "actualClose": 351.16,
+          "predictedClose": 188.0112,
+          "error": 163.1488
+        },
+        {
+          "date": "2026-09-23",
+          "open": 349.86,
+          "actualClose": 337.83,
+          "predictedClose": 188.0112,
+          "error": 149.8188
+        }
+      ]
+    },
+    "gradient_boosting": {
+      "model_key": "gradient_boosting",
+      "model_name": "Gradient Boosting Regressor",
+      "description": "Sequential boosting ensemble building decision trees to minimize residual prediction errors.",
+      "features_used": [
+        "Open",
+        "High",
+        "Low",
+        "Volume"
+      ],
+      "formula_display": "GradientBoostingRegressor(n_estimators=100, lr=0.1, max_depth=5)",
+      "r2": -10.3091,
+      "r2_percentage": -1030.91,
+      "mae": 131.9576,
+      "mse": 19097.3305,
+      "rmse": 138.1931,
+      "mape": 40.15,
+      "test_samples": [
+        {
+          "date": "2026-06-30",
+          "open": 353.6427,
+          "actualClose": 357.1404,
+          "predictedClose": 188.126,
+          "error": 169.0144
+        },
+        {
+          "date": "2026-07-01",
+          "open": 358.1398,
+          "actualClose": 360.978,
+          "predictedClose": 188.6981,
+          "error": 172.2799
+        },
+        {
+          "date": "2026-07-02",
+          "open": 359.2491,
+          "actualClose": 359.6788,
+          "predictedClose": 188.6598,
+          "error": 171.019
+        },
+        {
+          "date": "2026-07-06",
+          "open": 361.3177,
+          "actualClose": 366.2246,
+          "predictedClose": 188.6981,
+          "error": 177.5265
+        },
+        {
+          "date": "2026-07-07",
+          "open": 368.8329,
+          "actualClose": 366.7942,
+          "predictedClose": 188.7227,
+          "error": 178.0715
+        },
+        {
+          "date": "2026-07-08",
+          "open": 364.5257,
+          "actualClose": 361.6875,
+          "predictedClose": 188.7227,
+          "error": 172.9648
+        },
+        {
+          "date": "2026-07-09",
+          "open": 354.0824,
+          "actualClose": 358.6595,
+          "predictedClose": 188.6207,
+          "error": 170.0388
+        },
+        {
+          "date": "2026-07-10",
+          "open": 357.3003,
+          "actualClose": 356.9506,
+          "predictedClose": 188.5995,
+          "error": 168.3511
+        },
+        {
+          "date": "2026-07-13",
+          "open": 355.9612,
+          "actualClose": 352.2836,
+          "predictedClose": 188.5095,
+          "error": 163.7741
+        },
+        {
+          "date": "2026-07-14",
+          "open": 350.9744,
+          "actualClose": 359.2791,
+          "predictedClose": 188.7069,
+          "error": 170.5722
+        },
+        {
+          "date": "2026-07-15",
+          "open": 357.7401,
+          "actualClose": 370.6818,
+          "predictedClose": 188.204,
+          "error": 182.4778
+        },
+        {
+          "date": "2026-07-16",
+          "open": 372.8204,
+          "actualClose": 354.2323,
+          "predictedClose": 188.2237,
+          "error": 166.0086
+        },
+        {
+          "date": "2026-07-17",
+          "open": 345.7777,
+          "actualClose": 346.5472,
+          "predictedClose": 188.1276,
+          "error": 158.4196
+        },
+        {
+          "date": "2026-07-20",
+          "open": 350.6546,
+          "actualClose": 351.7639,
+          "predictedClose": 188.6207,
+          "error": 163.1432
+        },
+        {
+          "date": "2026-07-21",
+          "open": 351.0943,
+          "actualClose": 346.927,
+          "predictedClose": 188.7227,
+          "error": 158.2043
+        },
+        {
+          "date": "2026-07-22",
+          "open": 347.9363,
+          "actualClose": 341.8702,
+          "predictedClose": 188.0713,
+          "error": 153.7989
+        },
+        {
+          "date": "2026-07-23",
+          "open": 320.9237,
+          "actualClose": 317.4859,
+          "predictedClose": 188.23,
+          "error": 129.2559
+        },
+        {
+          "date": "2026-07-24",
+          "open": 318.2155,
+          "actualClose": 319.5346,
+          "predictedClose": 188.2984,
+          "error": 131.2362
+        },
+        {
+          "date": "2026-07-27",
+          "open": 324.8312,
+          "actualClose": 326.3502,
+          "predictedClose": 188.1634,
+          "error": 138.1868
+        },
+        {
+          "date": "2026-07-28",
+          "open": 327.6894,
+          "actualClose": 333.4956,
+          "predictedClose": 188.1009,
+          "error": 145.3947
+        },
+        {
+          "date": "2026-07-29",
+          "open": 334.455,
+          "actualClose": 336.4937,
+          "predictedClose": 188.2061,
+          "error": 148.2876
+        },
+        {
+          "date": "2026-07-30",
+          "open": 333.9853,
+          "actualClose": 333.4457,
+          "predictedClose": 188.0836,
+          "error": 145.3621
+        },
+        {
+          "date": "2026-07-31",
+          "open": 340.6111,
+          "actualClose": 355.9012,
+          "predictedClose": 187.9599,
+          "error": 167.9413
+        },
+        {
+          "date": "2026-08-03",
+          "open": 365.2153,
+          "actualClose": 373.2701,
+          "predictedClose": 188.0863,
+          "error": 185.1838
+        },
+        {
+          "date": "2026-08-04",
+          "open": 367.9835,
+          "actualClose": 377.4074,
+          "predictedClose": 188.1866,
+          "error": 189.2208
+        },
+        {
+          "date": "2026-08-05",
+          "open": 383.0937,
+          "actualClose": 362.1972,
+          "predictedClose": 187.9599,
+          "error": 174.2373
+        },
+        {
+          "date": "2026-08-06",
+          "open": 360.5383,
+          "actualClose": 357.5202,
+          "predictedClose": 188.5444,
+          "error": 168.9758
+        },
+        {
+          "date": "2026-08-07",
+          "open": 356.4908,
+          "actualClose": 354.0724,
+          "predictedClose": 188.7227,
+          "error": 165.3497
+        },
+        {
+          "date": "2026-08-10",
+          "open": 354.9519,
+          "actualClose": 357.2903,
+          "predictedClose": 188.7227,
+          "error": 168.5676
+        },
+        {
+          "date": "2026-08-11",
+          "open": 355.6614,
+          "actualClose": 343.5791,
+          "predictedClose": 188.119,
+          "error": 155.4601
+        },
+        {
+          "date": "2026-08-12",
+          "open": 346.0875,
+          "actualClose": 343.3193,
+          "predictedClose": 188.6207,
+          "error": 154.6986
+        },
+        {
+          "date": "2026-08-13",
+          "open": 345.5479,
+          "actualClose": 346.1375,
+          "predictedClose": 188.5467,
+          "error": 157.5908
+        },
+        {
+          "date": "2026-08-14",
+          "open": 346.5772,
+          "actualClose": 345.6778,
+          "predictedClose": 188.586,
+          "error": 157.0918
+        },
+        {
+          "date": "2026-08-17",
+          "open": 346.0476,
+          "actualClose": 343.779,
+          "predictedClose": 188.7069,
+          "error": 155.0721
+        },
+        {
+          "date": "2026-08-18",
+          "open": 342.1901,
+          "actualClose": 343.9789,
+          "predictedClose": 188.7227,
+          "error": 155.2562
+        },
+        {
+          "date": "2026-08-19",
+          "open": 342.24,
+          "actualClose": 344.4986,
+          "predictedClose": 188.7227,
+          "error": 155.7759
+        },
+        {
+          "date": "2026-08-20",
+          "open": 342.8396,
+          "actualClose": 340.4512,
+          "predictedClose": 188.7227,
+          "error": 151.7285
+        },
+        {
+          "date": "2026-08-21",
+          "open": 342.3599,
+          "actualClose": 344.5985,
+          "predictedClose": 188.7227,
+          "error": 155.8758
+        },
+        {
+          "date": "2026-08-24",
+          "open": 343.3993,
+          "actualClose": 347.8364,
+          "predictedClose": 188.6471,
+          "error": 159.1893
+        },
+        {
+          "date": "2026-08-25",
+          "open": 349.4154,
+          "actualClose": 346.7371,
+          "predictedClose": 188.7227,
+          "error": 158.0144
+        },
+        {
+          "date": "2026-08-26",
+          "open": 346.3973,
+          "actualClose": 341.7803,
+          "predictedClose": 188.7227,
+          "error": 153.0576
+        },
+        {
+          "date": "2026-08-27",
+          "open": 339.4518,
+          "actualClose": 340.4312,
+          "predictedClose": 188.7227,
+          "error": 151.7085
+        },
+        {
+          "date": "2026-08-28",
+          "open": 340.4911,
+          "actualClose": 346.3674,
+          "predictedClose": 188.5548,
+          "error": 157.8126
+        },
+        {
+          "date": "2026-08-31",
+          "open": 343.6091,
+          "actualClose": 339.132,
+          "predictedClose": 188.1016,
+          "error": 151.0304
+        },
+        {
+          "date": "2026-09-01",
+          "open": 335.7842,
+          "actualClose": 334.8048,
+          "predictedClose": 188.7227,
+          "error": 146.0821
+        },
+        {
+          "date": "2026-09-02",
+          "open": 333.8454,
+          "actualClose": 336.9034,
+          "predictedClose": 188.7227,
+          "error": 148.1807
+        },
+        {
+          "date": "2026-09-03",
+          "open": 340.3412,
+          "actualClose": 342.26,
+          "predictedClose": 188.7227,
+          "error": 153.5373
+        },
+        {
+          "date": "2026-09-04",
+          "open": 342.47,
+          "actualClose": 338.46,
+          "predictedClose": 188.7227,
+          "error": 149.7373
+        },
+        {
+          "date": "2026-09-08",
+          "open": 335.42,
+          "actualClose": 338.36,
+          "predictedClose": 188.7227,
+          "error": 149.6373
+        },
+        {
+          "date": "2026-09-09",
+          "open": 331.65,
+          "actualClose": 330.65,
+          "predictedClose": 188.1988,
+          "error": 142.4512
+        },
+        {
+          "date": "2026-09-10",
+          "open": 328.23,
+          "actualClose": 332.6,
+          "predictedClose": 188.7227,
+          "error": 143.8773
+        },
+        {
+          "date": "2026-09-11",
+          "open": 335.03,
+          "actualClose": 338.5,
+          "predictedClose": 188.6207,
+          "error": 149.8793
+        },
+        {
+          "date": "2026-09-14",
+          "open": 343.12,
+          "actualClose": 349.39,
+          "predictedClose": 188.0863,
+          "error": 161.3037
+        },
+        {
+          "date": "2026-09-15",
+          "open": 346.8,
+          "actualClose": 344.98,
+          "predictedClose": 188.7227,
+          "error": 156.2573
+        },
+        {
+          "date": "2026-09-16",
+          "open": 347.08,
+          "actualClose": 342.87,
+          "predictedClose": 188.7227,
+          "error": 154.1473
+        },
+        {
+          "date": "2026-09-17",
+          "open": 348.68,
+          "actualClose": 347.33,
+          "predictedClose": 188.7227,
+          "error": 158.6073
+        },
+        {
+          "date": "2026-09-18",
+          "open": 357.31,
+          "actualClose": 349.54,
+          "predictedClose": 188.0075,
+          "error": 161.5325
+        },
+        {
+          "date": "2026-09-21",
+          "open": 350.64,
+          "actualClose": 354.97,
+          "predictedClose": 188.0934,
+          "error": 166.8766
+        },
+        {
+          "date": "2026-09-22",
+          "open": 357.65,
+          "actualClose": 351.16,
+          "predictedClose": 188.1009,
+          "error": 163.0591
+        },
+        {
+          "date": "2026-09-23",
+          "open": 349.86,
+          "actualClose": 337.83,
+          "predictedClose": 188.1866,
+          "error": 149.6434
+        }
+      ]
+    }
+  }
+}

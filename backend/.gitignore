@@ -1,0 +1,23 @@
+# Environment Variables & Secrets
+.env
+.env.local
+.env.*
+!.env.example
+
+# Python Caches & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Model Files & Saved Weights
+models/*.pkl
+saved_models/*.pkl
+*.joblib
+
+# Logs & Data Caches
+*.log
+data/cache/

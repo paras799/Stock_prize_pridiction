@@ -1,72 +1,106 @@
-import { useState, useEffect } from 'react';
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
-import SvrPage from './pages/SvrPage';
-import SimpleLinearPage from './pages/SimpleLinearPage';
-import MultipleLinearPage from './pages/MultipleLinearPage';
-import PolynomialPage from './pages/PolynomialPage';
-import ComparisonPage from './pages/ComparisonPage';
+import React from 'react';
+import { RouterProvider, useRouter } from './router/RouterContext';
+import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import ModelsOverview from './pages/ModelsOverview';
+import ModelPage from './pages/ModelPage';
+import ModelAboutPage from './pages/ModelAboutPage';
 import AboutPage from './pages/AboutPage';
-import { fetchComparisonMetrics } from './services/api';
+import { useAssetData } from './hooks/useAssetData';
 import './App.css';
 
-function App() {
-  const [activePage, setActivePage] = useState('svr');
-  const [aboutSubTab, setAboutSubTab] = useState('svr');
-  const [comparisonMetrics, setComparisonMetrics] = useState(null);
+const MainAppContent = () => {
+  const { currentPath } = useRouter();
+  const assetDataProps = useAssetData();
 
-  useEffect(() => {
-    fetchComparisonMetrics()
-      .then(setComparisonMetrics)
-      .catch((err) => console.error('Failed to fetch comparison metrics', err));
-  }, []);
+  // Route matching logic
+  const renderRoute = () => {
+    const path = currentPath.toLowerCase().trim();
 
-  const handleNavigateToAbout = (modelKey) => {
-    setAboutSubTab(modelKey);
-    setActivePage('about');
-  };
+    if (path === '/' || path === '') {
+      return (
+        <Home
+          assets={assetDataProps.assets}
+          comparisonData={assetDataProps.comparisonData}
+        />
+      );
+    }
 
-  const handleSelectModelFromComparison = (modelKey) => {
-    setActivePage(modelKey);
+    if (path === '/models' || path === '/models/') {
+      return (
+        <ModelsOverview
+          assets={assetDataProps.assets}
+          selectedAssetId={assetDataProps.selectedAssetId}
+          onSelectAsset={assetDataProps.setSelectedAssetId}
+          comparisonData={assetDataProps.comparisonData}
+          historicalData={assetDataProps.historicalData}
+          predictionData={assetDataProps.predictionData}
+        />
+      );
+    }
+
+    if (path === '/about' || path === '/about/') {
+      return <AboutPage />;
+    }
+
+    // Match /models/:slug or /models/:slug/about
+    if (path.startsWith('/models/')) {
+      const parts = path.split('/').filter(Boolean); // ['models', 'linear-regression'] or ['models', 'linear-regression', 'about']
+      if (parts.length >= 2) {
+        const modelSlug = parts[1];
+        const isAbout = parts.length >= 3 && parts[2] === 'about';
+
+        if (isAbout) {
+          return <ModelAboutPage slug={modelSlug} />;
+        }
+
+        return (
+          <ModelPage
+            slug={modelSlug}
+            assets={assetDataProps.assets}
+            selectedAssetId={assetDataProps.selectedAssetId}
+            onSelectAsset={assetDataProps.setSelectedAssetId}
+            predictionData={assetDataProps.predictionData}
+            historicalData={assetDataProps.historicalData}
+            comparisonData={assetDataProps.comparisonData}
+            loading={assetDataProps.loading}
+            error={assetDataProps.error}
+            isCustomInput={assetDataProps.isCustomInput}
+            onCustomPrediction={assetDataProps.handleCustomPrediction}
+            onResetRealtime={assetDataProps.handleResetToRealtime}
+          />
+        );
+      }
+    }
+
+    // Default fallback
+    return (
+      <Home
+        assets={assetDataProps.assets}
+        comparisonData={assetDataProps.comparisonData}
+      />
+    );
   };
 
   return (
-    <div className="container">
-      <Header
-        activePage={activePage}
-        setActivePage={setActivePage}
-        setAboutSubTab={setAboutSubTab}
-        comparisonMetrics={comparisonMetrics}
+    <div className="app-layout">
+      <Navbar
+        assets={assetDataProps.assets}
+        selectedAssetId={assetDataProps.selectedAssetId}
+        onSelectAsset={assetDataProps.setSelectedAssetId}
       />
-
-      <main className="main-content">
-        {activePage === 'svr' && (
-          <SvrPage onNavigateToAbout={handleNavigateToAbout} />
-        )}
-
-        {activePage === 'simple-linear' && (
-          <SimpleLinearPage onNavigateToAbout={handleNavigateToAbout} />
-        )}
-
-        {activePage === 'multiple-linear' && (
-          <MultipleLinearPage onNavigateToAbout={handleNavigateToAbout} />
-        )}
-
-        {activePage === 'polynomial' && (
-          <PolynomialPage onNavigateToAbout={handleNavigateToAbout} />
-        )}
-
-        {activePage === 'comparison' && (
-          <ComparisonPage onSelectModel={handleSelectModelFromComparison} />
-        )}
-
-        {activePage === 'about' && (
-          <AboutPage defaultSubTab={aboutSubTab} />
-        )}
-      </main>
-
+      <main className="main-content-viewport">{renderRoute()}</main>
       <Footer />
     </div>
+  );
+};
+
+function App() {
+  return (
+    <RouterProvider>
+      <MainAppContent />
+    </RouterProvider>
   );
 }
 

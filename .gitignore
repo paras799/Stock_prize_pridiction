@@ -1,0 +1,51 @@
+# Environment Variables & Secrets
+.env
+.env.*
+!.env.example
+*.env
+
+# Python Caches & Virtual Environments
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# Machine Learning Models & Saved Weights
+backend/models/*.pkl
+backend/saved_models/*.pkl
+*.pkl
+*.joblib
+*.h5
+
+# Node / Frontend Build Artifacts
+node_modules/
+frontend/node_modules/
+dist/
+frontend/dist/
+dist-ssr/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# IDE & System Files
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
