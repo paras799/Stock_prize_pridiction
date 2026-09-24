@@ -12,43 +12,46 @@ import {
   Database,
   ShieldCheck,
   TrendingUp,
+  BarChart3,
+  Sliders,
+  CheckCircle2,
 } from 'lucide-react';
 
 const Home = ({ assets = [], comparisonData }) => {
   return (
     <div className="home-page-container">
-      {/* Hero Section */}
+      {/* 1. Hero Section */}
       <section className="hero-section">
         <div className="hero-content">
           <div className="hero-pill-badge">
             <Sparkles size={14} className="sparkle-icon" />
-            <span>AI-Driven Financial Analytics Platform</span>
+            <span>AI-POWERED QUANTITATIVE PLATFORM</span>
           </div>
 
           <h1 className="hero-headline">
-            AI-Powered Stock Price Prediction
+            Predict Stock Prices with Machine Learning
           </h1>
 
           <p className="hero-subtitle">
-            Our platform utilizes advanced machine-learning regression models trained on historical market time-series data to evaluate intraday market indicators and estimate future daily closing prices.
+            Evaluate intraday market indicators, analyze historical time-series data, and generate data-driven daily closing price forecasts across six distinct regression algorithms.
           </p>
 
           <div className="hero-cta-group">
             <Link to="/models" className="btn btn-primary btn-lg">
-              <span>Explore All 6 Models</span>
+              <span>Start Predicting</span>
               <ArrowRight size={18} />
             </Link>
             <Link to="/about" className="btn btn-secondary btn-lg">
               <BookOpen size={18} />
-              <span>Learn How It Works</span>
+              <span>Explore Platform Architecture</span>
             </Link>
           </div>
 
-          {/* Quick Metrics Bar */}
+          {/* Quick Metrics Overview Grid */}
           <div className="hero-metrics-grid">
             <MetricCard
-              label="Available ML Models"
-              value="6 Algorithms"
+              label="Available Regressors"
+              value="6 ML Models"
               subtext="Linear, SVR, Trees & Boosting"
               icon={Cpu}
             />
@@ -67,20 +70,63 @@ const Home = ({ assets = [], comparisonData }) => {
             <MetricCard
               label="Data Integration"
               value="Real-Time Sync"
-              subtext="Live market prices & custom input"
+              subtext="Live exchange price feeds"
               icon={TrendingUp}
             />
           </div>
         </div>
       </section>
 
-      {/* How It Works Section */}
+      {/* 2. Platform Value Propositions / Key Pillars */}
       <section className="home-section">
         <div className="section-header-center">
-          <span className="sub-badge">System Process</span>
+          <span className="sub-badge">WHAT WE PROVIDE</span>
+          <h2 className="section-main-title">Data-Driven Financial Intelligence</h2>
+          <p className="section-main-desc">
+            Combining rigorous statistical time-series methodology with real-time exchange data for transparent predictions.
+          </p>
+        </div>
+
+        <div className="value-props-grid">
+          <div className="value-card">
+            <div className="value-icon-box">
+              <BarChart3 size={22} />
+            </div>
+            <h3 className="value-title">Intraday Market Analysis</h3>
+            <p className="value-desc">
+              Synthesizes session Open, High, Low, and trading Volume data to capture market momentum and price volatility.
+            </p>
+          </div>
+
+          <div className="value-card">
+            <div className="value-icon-box">
+              <Sliders size={22} />
+            </div>
+            <h3 className="value-title">Multi-Algorithm Comparison</h3>
+            <p className="value-desc">
+              Compare single-variable linear models against high-dimensional Support Vector Regression and decision tree ensembles.
+            </p>
+          </div>
+
+          <div className="value-card">
+            <div className="value-icon-box">
+              <CheckCircle2 size={22} />
+            </div>
+            <h3 className="value-title">Holdout Out-of-Sample Testing</h3>
+            <p className="value-desc">
+              Every model is validated on unseen holdout test records with transparent R² accuracy scores and Mean Absolute Error (MAE).
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 3. How It Works Section */}
+      <section className="home-section">
+        <div className="section-header-center">
+          <span className="sub-badge">SYSTEM PROCESS</span>
           <h2 className="section-main-title">How The Platform Works</h2>
           <p className="section-main-desc">
-            A transparent four-step pipeline connecting live financial data feeds to statistical ML prediction engines.
+            A transparent four-step quantitative pipeline connecting live financial market feeds to trained machine learning models.
           </p>
         </div>
 
@@ -89,45 +135,51 @@ const Home = ({ assets = [], comparisonData }) => {
             <div className="hiw-num">01</div>
             <h3 className="hiw-title">Market Data Feed</h3>
             <p className="hiw-desc">
-              Connects directly to financial market APIs to retrieve real-time daily Open, High, Low, and Volume records.
+              Connects to financial exchange APIs to retrieve real-time daily Open, High, Low, and Volume price records.
             </p>
           </div>
           <div className="hiw-card">
             <div className="hiw-num">02</div>
             <h3 className="hiw-title">Feature Engineering</h3>
             <p className="hiw-desc">
-              Standardizes raw features using StandardScaler and generates polynomial interaction terms where required.
+              Normalizes raw market inputs using StandardScaler and generates polynomial interaction terms where required.
             </p>
           </div>
           <div className="hiw-card">
             <div className="hiw-num">03</div>
             <h3 className="hiw-title">Multi-Model Inference</h3>
             <p className="hiw-desc">
-              Executes predictions across 6 trained scikit-learn model pipelines simultaneously for comparative analysis.
+              Executes predictions across 6 trained scikit-learn model pipelines simultaneously for comparative evaluation.
             </p>
           </div>
           <div className="hiw-card">
             <div className="hiw-num">04</div>
             <h3 className="hiw-title">Analytical Output</h3>
             <p className="hiw-desc">
-              Displays predicted close prices, directional dollar & percentage changes, and holdout accuracy metrics.
+              Displays estimated closing prices, directional price changes, and holdout R² validation accuracy metrics.
             </p>
           </div>
         </div>
+
+        {/* Visual Pipeline Embed */}
+        <div className="home-workflow-embed">
+          <WorkflowDiagram title="End-to-End Market Prediction Pipeline" />
+        </div>
       </section>
 
-      {/* Available Models Overview Grid */}
+      {/* 4. Supported ML Models Portfolio Grid */}
       <section className="home-section">
         <div className="section-header-between">
           <div>
-            <span className="sub-badge">Algorithm Portfolio</span>
+            <span className="sub-badge">ALGORITHM PORTFOLIO</span>
             <h2 className="section-main-title">Available Machine Learning Models</h2>
             <p className="section-main-desc">
-              Every model has its own dedicated page for live predictions and technical documentation.
+              Select any model to execute live predictions or inspect detailed mathematical specifications.
             </p>
           </div>
           <Link to="/models" className="btn btn-outline btn-sm">
-            View Comparison Table <ArrowRight size={14} />
+            <span>View Comparison Grid</span>
+            <ArrowRight size={14} />
           </Link>
         </div>
 
@@ -149,15 +201,10 @@ const Home = ({ assets = [], comparisonData }) => {
         </div>
       </section>
 
-      {/* Market Prediction Workflow */}
-      <section className="home-section">
-        <WorkflowDiagram title="End-to-End Market Prediction Pipeline" />
-      </section>
-
-      {/* Tech Stack */}
+      {/* 5. Technology Stack Architecture */}
       <section className="home-section">
         <div className="section-header-center">
-          <span className="sub-badge">Architecture</span>
+          <span className="sub-badge">ARCHITECTURE</span>
           <h2 className="section-main-title">Technology Stack</h2>
           <p className="section-main-desc">
             Built using modern, reliable open-source frameworks for high performance and strict quantitative reproducibility.
@@ -166,41 +213,58 @@ const Home = ({ assets = [], comparisonData }) => {
 
         <div className="tech-stack-grid">
           <div className="tech-card">
-            <div className="tech-icon-box">React</div>
-            <h4>Vite & React 19</h4>
-            <p>Component-based user interface rendered with vanilla CSS design system.</p>
+            <div className="tech-card-top">
+              <div className="tech-icon-box">UI</div>
+              <span className="tech-category-pill">Frontend</span>
+            </div>
+            <h4 className="tech-card-title">Vite & React 19</h4>
+            <p className="tech-card-desc">Modern single-page client interface built with custom CSS design tokens.</p>
           </div>
+
           <div className="tech-card">
-            <div className="tech-icon-box">Python</div>
-            <h4>FastAPI Backend</h4>
-            <p>High-speed asynchronous Python REST API serving trained model artifacts.</p>
+            <div className="tech-card-top">
+              <div className="tech-icon-box">API</div>
+              <span className="tech-category-pill">Backend</span>
+            </div>
+            <h4 className="tech-card-title">FastAPI Microservice</h4>
+            <p className="tech-card-desc">High-speed asynchronous Python REST API serving trained model artifacts.</p>
           </div>
+
           <div className="tech-card">
-            <div className="tech-icon-box">Scikit</div>
-            <h4>Scikit-Learn ML</h4>
-            <p>Standardized pipelines for Linear Regression, SVR, Random Forest, and Gradient Boosting.</p>
+            <div className="tech-card-top">
+              <div className="tech-icon-box">ML</div>
+              <span className="tech-category-pill">Intelligence</span>
+            </div>
+            <h4 className="tech-card-title">Scikit-Learn ML</h4>
+            <p className="tech-card-desc">Standardized pipelines for Linear Regression, SVR, Random Forest, and Gradient Boosting.</p>
           </div>
+
           <div className="tech-card">
-            <div className="tech-icon-box">Charts</div>
-            <h4>Recharts Library</h4>
-            <p>Interactive data visualization for historical prices and model accuracy benchmarks.</p>
+            <div className="tech-card-top">
+              <div className="tech-icon-box">DATA</div>
+              <span className="tech-category-pill">Visuals</span>
+            </div>
+            <h4 className="tech-card-title">Lightweight Charts & Recharts</h4>
+            <p className="tech-card-desc">Interactive TradingView financial charts and holdout accuracy benchmark visuals.</p>
           </div>
         </div>
       </section>
 
-      {/* About Project Summary */}
-      <section className="home-section bottom-cta-card">
-        <div className="cta-content">
-          <h2>Ready to Explore Stock Price Predictions?</h2>
-          <p>
-            Choose any algorithm to test real-time predictions, analyze custom what-if market scenarios, or read the mathematical specifications.
+      {/* 6. Call To Action Section */}
+      <section className="home-section bottom-cta-banner">
+        <div className="cta-banner-content">
+          <h2 className="cta-title">Ready to Explore Stock Price Predictions?</h2>
+          <p className="cta-desc">
+            Choose any algorithm to test real-time predictions, analyze custom what-if market scenarios, or inspect algorithm specifications.
           </p>
-          <div className="cta-buttons">
+          <div className="cta-buttons-wrapper">
             <Link to="/models" className="btn btn-primary btn-lg">
-              Explore All Models <ArrowRight size={18} />
+              <span>Start Predicting Now</span>
+              <ArrowRight size={18} />
             </Link>
             <Link to="/about" className="btn btn-secondary btn-lg">
-              Read Documentation
+              <BookOpen size={18} />
+              <span>Read Documentation</span>
             </Link>
           </div>
         </div>

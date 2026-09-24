@@ -517,9 +517,18 @@
   margin-top: 0.25rem;
 }
 
-/* Home Section Layouts */
+/* Home Section Layouts & Value Proposition Grid */
+.home-page-container {
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
 .home-section {
-  margin-bottom: 4rem;
+  margin-bottom: 0.5rem;
 }
 
 .section-header-center {
@@ -547,6 +556,61 @@
 .section-main-desc {
   font-size: 0.975rem;
   color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Value Proposition Grid (3 Pillars) */
+.value-props-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.value-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-creamy);
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+  border-color: #CBD5E1;
+  box-shadow: var(--shadow-md);
+}
+
+.value-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background-color: var(--primary-light);
+  color: var(--primary-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.value-title {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.value-desc {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.home-workflow-embed {
+  margin-top: 2rem;
 }
 
 /* How It Works Cards */
@@ -3054,41 +3118,63 @@
   line-height: 1.5;
 }
 
-/* About CTA Banner */
-.about-cta-banner {
+/* Bottom CTA Banner (Home & About) */
+.about-cta-banner, .bottom-cta-banner {
   background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
   border-radius: 16px;
-  padding: 3rem 2rem;
+  padding: 3.5rem 2rem;
   text-align: center;
   color: #ffffff;
   box-shadow: var(--shadow-md);
-  margin-top: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .cta-banner-content {
-  max-width: 640px;
+  max-width: 660px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.25rem;
 }
 
-.cta-banner-content h2 {
+.cta-banner-content h2, .cta-title {
   font-family: var(--font-heading);
-  font-size: 1.85rem;
+  font-size: 2rem;
   font-weight: 800;
   color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 0.25rem;
 }
 
-.cta-banner-content p {
-  font-size: 1rem;
+.cta-banner-content p, .cta-desc {
+  font-size: 1.05rem;
   color: #94A3B8;
-  line-height: 1.5;
+  line-height: 1.6;
+  max-width: 600px;
 }
 
-.cta-btn-group {
-  margin-top: 0.5rem;
+.cta-buttons-wrapper, .cta-btn-group, .cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bottom-cta-banner .btn-secondary, .about-cta-banner .btn-secondary {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+.bottom-cta-banner .btn-secondary:hover, .about-cta-banner .btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 
 /* ==========================================================================
@@ -3099,7 +3185,7 @@
     font-size: 2.35rem;
   }
 
-  .hero-metrics-grid, .how-it-works-grid {
+  .hero-metrics-grid, .how-it-works-grid, .value-props-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -3146,7 +3232,7 @@
     flex-direction: column;
   }
 
-  .models-cards-grid {
+  .models-cards-grid, .value-props-grid {
     grid-template-columns: 1fr;
   }
 
@@ -3195,7 +3281,7 @@
     text-align: center;
   }
 
-  .about-page-container {
+  .about-page-container, .home-page-container {
     padding: 0 1rem;
     gap: 2.5rem;
   }
