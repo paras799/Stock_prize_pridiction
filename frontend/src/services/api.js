@@ -39,3 +39,9 @@ export const fetchModelComparison = async (assetId) => {
   if (!response.ok) throw new Error(`Failed to fetch comparison metrics for ${assetId}`);
   return await response.json();
 };
+
+export const fetchHoldoutValidation = async (assetId, modelKey = 'svr') => {
+  const response = await fetch(`${API_BASE_URL}/validation/holdout/${assetId}?model_key=${modelKey}`);
+  if (!response.ok) throw new Error(`Failed to fetch holdout validation data for ${assetId}`);
+  return await response.json();
+};

@@ -60,8 +60,8 @@ def evaluate_model(
         dates = df_test["Date_str"].tolist() if "Date_str" in df_test.columns else [f"Index {i}" for i in range(len(df_test))]
         opens = df_test["Open"].tolist() if "Open" in df_test.columns else [0.0] * len(df_test)
         
-        # Take up to last 60 test points for clean chart display
-        num_points = min(60, len(y_test))
+        # Take up to last 100 test points for clean chart display
+        num_points = min(100, len(y_test))
         start_idx = len(y_test) - num_points
 
         for i in range(start_idx, len(y_test)):

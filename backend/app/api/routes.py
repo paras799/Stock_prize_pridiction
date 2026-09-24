@@ -118,6 +118,30 @@ def post_custom_prediction_endpoint(payload: CustomPredictionRequest):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Prediction failed: {str(e)}")
 
+from app.services.holdout_validation_service import get_holdout_validation_data
+from app.models.schemas import (
+    AssetInfoResponse,
+    PredictionResponse,
+    CustomPredictionRequest,
+    AssetComparisonResponse,
+    HoldoutValidationResponse
+)
+
+@router.get("/validation/holdout/{asset_id}", response_model=HoldoutValidationResponse, tags=["Evaluation"])
+def get_holdout_validation_endpoint(asset_id: str, model_key: str = Query("svr", description="Model algorithm identifier")):
+    """
+    Dedicated Holdout Validation endpoint (Flow B).
+    Evaluates out-of-sample chronological test dataset and returns Actual vs Predicted time-series for chart rendering.
+    """
+    try:
+        return get_holdout_validation_data(asset_id, model_key)
+    except ValueError as ve:
+        raise HTTPException(status_code=404, detail=str(ve))
+    except FileNotFoundError as fnf:
+        raise HTTPException(status_code=404, detail=f"Model artifacts missing for asset '{asset_id}': {str(fnf)}")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Holdout validation error: {str(e)}")
+
 @router.get("/model-comparison/{asset_id}", response_model=AssetComparisonResponse, tags=["Evaluation"])
 def get_model_comparison_endpoint(asset_id: str):
     """Returns ranked model comparison metrics and recommended best model."""

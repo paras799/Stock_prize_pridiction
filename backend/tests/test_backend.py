@@ -67,3 +67,34 @@ def test_assets_endpoint():
 def test_invalid_prediction_asset():
     response = client.get("/prediction/non_existent_asset")
     assert response.status_code == 404
+
+def test_single_prediction_endpoint():
+    response = client.get("/prediction/reliance?model_key=svr")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["asset_id"] == "reliance"
+    assert "predictions" in data
+    assert "svr" in data["predictions"]
+    svr_pred = data["predictions"]["svr"]
+    assert "predicted_close" in svr_pred
+    assert "open_price" in svr_pred
+    assert "diff_from_open" in svr_pred
+    assert "percentage_diff" in svr_pred
+
+
+def test_holdout_validation_endpoint():
+    response = client.get("/validation/holdout/reliance?model_key=svr")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["asset_id"] == "reliance"
+    assert data["model_key"] == "svr"
+    assert "data" in data
+    assert "metrics" in data
+    assert len(data["data"]) > 0
+    first_pt = data["data"][0]
+    assert "date" in first_pt
+    assert "actual" in first_pt
+    assert "predicted" in first_pt
+    assert "error" in first_pt
+    assert "error_percent" in first_pt
+

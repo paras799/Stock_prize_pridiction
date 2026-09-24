@@ -120,3 +120,17 @@ def split_time_series_chronologically(
     df_test = df.iloc[val_end:].copy()
 
     return df_train, df_val, df_test
+
+def prepare_train_test_split(
+    df: pd.DataFrame, 
+    test_ratio: float = 0.15
+) -> Tuple[pd.DataFrame, pd.DataFrame]:
+    """
+    Splits dataset chronologically into train and holdout test sets without shuffling.
+    """
+    n = len(df)
+    train_end = int(n * (1.0 - test_ratio))
+    df_train = df.iloc[:train_end].copy()
+    df_test = df.iloc[train_end:].copy()
+    return df_train, df_test
+

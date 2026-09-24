@@ -71,3 +71,34 @@ class AssetComparisonResponse(BaseModel):
     recommended_best_model: str
     recommended_best_model_name: str
     models: List[ModelMetricDetail]
+
+class HoldoutSamplePoint(BaseModel):
+    date: str
+    actual: float
+    predicted: float
+    error: float
+    error_percent: float
+
+class ValidationPeriodInfo(BaseModel):
+    start: str
+    end: str
+    sample_count: int
+
+class ValidationMetricsInfo(BaseModel):
+    r2: float
+    r2_percentage: float
+    mae: float
+    mse: float
+    rmse: float
+    mape: float
+
+class HoldoutValidationResponse(BaseModel):
+    asset_id: str
+    asset_name: str
+    symbol: str
+    currency: str
+    model_key: str
+    model_name: str
+    validation_period: ValidationPeriodInfo
+    data: List[HoldoutSamplePoint]
+    metrics: ValidationMetricsInfo

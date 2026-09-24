@@ -1,15 +1,7 @@
 import { useState } from 'react';
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  Cell,
-} from 'recharts';
 import { Award, ArrowUpDown, BarChart2 } from 'lucide-react';
 import { formatNumber } from '../utils/formatters';
+import ModelR2Chart from './ModelR2Chart';
 
 const ModelComparisonTable = ({ comparisonData, currency }) => {
   const [sortField, setSortField] = useState('r2_percentage');
@@ -35,13 +27,6 @@ const ModelComparisonTable = ({ comparisonData, currency }) => {
       return valA < valB ? 1 : -1;
     }
   });
-
-  const chartData = comparisonData.models.map((m) => ({
-    name: m.model_name.replace(' (Degree 2)', '').replace(' (SVR - RBF)', ''),
-    r2: m.r2_percentage > 0 ? m.r2_percentage : 0,
-    mae: m.mae,
-    isRecommended: m.model_key === comparisonData.recommended_best_model,
-  }));
 
   return (
     <div className="glass-card comparison-section">
@@ -102,35 +87,12 @@ const ModelComparisonTable = ({ comparisonData, currency }) => {
         </table>
       </div>
 
-      <div className="chart-wrapper font-chart">
-        <h4 className="subchart-title">Visual R² Score Accuracy Comparison (%)</h4>
-        <div style={{ width: '100%', height: 260 }}>
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart data={chartData} margin={{ top: 20, right: 30, left: 0, bottom: 40 }}>
-              <XAxis dataKey="name" stroke="#94a3b8" angle={-15} textAnchor="end" interval={0} tick={{ fontSize: 11 }} />
-              <YAxis stroke="#94a3b8" domain={[0, 100]} />
-              <Tooltip
-                contentStyle={{
-                  backgroundColor: '#0f172a',
-                  borderColor: '#334155',
-                  borderRadius: '8px',
-                  color: '#f8fafc',
-                }}
-              />
-              <Bar dataKey="r2" name="Test R² Score (%)" radius={[6, 6, 0, 0]}>
-                {chartData.map((entry, index) => (
-                  <Cell
-                    key={`cell-${index}`}
-                    fill={entry.isRecommended ? '#10b981' : '#6366f1'}
-                  />
-                ))}
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
+      <div className="chart-wrapper font-chart" style={{ marginTop: '2rem' }}>
+        <ModelR2Chart comparisonData={comparisonData} currency={currency} />
       </div>
     </div>
   );
 };
 
 export default ModelComparisonTable;
+
