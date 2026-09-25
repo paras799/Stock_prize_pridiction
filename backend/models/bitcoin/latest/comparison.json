@@ -7,9 +7,9 @@
     {
       "model_key": "linear",
       "model_name": "Simple Linear Regression",
-      "r2_percentage": 98.8,
-      "mae": 1316.5507,
-      "rmse": 1868.8685,
+      "r2_percentage": 98.79,
+      "mae": 1316.9518,
+      "rmse": 1868.8899,
       "mape": 1.62,
       "features_used": [
         "Open"
@@ -19,8 +19,8 @@
       "model_key": "multiple_linear",
       "model_name": "Multiple Linear Regression",
       "r2_percentage": 99.5,
-      "mae": 860.9279,
-      "rmse": 1199.6569,
+      "mae": 860.8314,
+      "rmse": 1199.4711,
       "mape": 1.07,
       "features_used": [
         "Open",
@@ -33,8 +33,8 @@
       "model_key": "polynomial",
       "model_name": "Polynomial Regression (Degree 3)",
       "r2_percentage": 99.19,
-      "mae": 867.4093,
-      "rmse": 1529.7585,
+      "mae": 862.4565,
+      "rmse": 1527.061,
       "mape": 0.99,
       "features_used": [
         "Open",
@@ -46,10 +46,10 @@
     {
       "model_key": "svr",
       "model_name": "Support Vector Regression (SVR - RBF)",
-      "r2_percentage": -553.24,
-      "mae": 35845.9324,
-      "rmse": 43571.6929,
-      "mape": 39.63,
+      "r2_percentage": -553.81,
+      "mae": 35729.5328,
+      "rmse": 43434.6225,
+      "mape": 39.55,
       "features_used": [
         "Open",
         "High",
@@ -60,10 +60,10 @@
     {
       "model_key": "random_forest",
       "model_name": "Random Forest Regressor",
-      "r2_percentage": -24.48,
-      "mae": 12248.9564,
-      "rmse": 19020.4981,
-      "mape": 12.3,
+      "r2_percentage": -24.28,
+      "mae": 12188.2453,
+      "rmse": 18937.1259,
+      "mape": 12.26,
       "features_used": [
         "Open",
         "High",
@@ -74,10 +74,10 @@
     {
       "model_key": "gradient_boosting",
       "model_name": "Gradient Boosting Regressor",
-      "r2_percentage": -21.96,
-      "mae": 12048.6785,
-      "rmse": 18826.9795,
-      "mape": 12.08,
+      "r2_percentage": -21.25,
+      "mae": 11958.1046,
+      "rmse": 18704.4837,
+      "mape": 12.0,
       "features_used": [
         "Open",
         "High",

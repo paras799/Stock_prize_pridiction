@@ -23,9 +23,6 @@ htmlcov/
 .ruff_cache/
 
 # Machine Learning Models & Saved Weights
-backend/models/*.pkl
-backend/saved_models/*.pkl
-*.pkl
 *.joblib
 *.h5
 

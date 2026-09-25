@@ -7,9 +7,9 @@
     {
       "model_key": "linear",
       "model_name": "Simple Linear Regression",
-      "r2_percentage": 98.35,
-      "mae": 3.9745,
-      "rmse": 5.2418,
+      "r2_percentage": 98.32,
+      "mae": 3.9749,
+      "rmse": 5.2409,
       "mape": 1.23,
       "features_used": [
         "Open"
@@ -18,9 +18,9 @@
     {
       "model_key": "multiple_linear",
       "model_name": "Multiple Linear Regression",
-      "r2_percentage": 99.27,
-      "mae": 2.6157,
-      "rmse": 3.488,
+      "r2_percentage": 99.26,
+      "mae": 2.611,
+      "rmse": 3.4862,
       "mape": 0.81,
       "features_used": [
         "Open",
@@ -32,10 +32,10 @@
     {
       "model_key": "polynomial",
       "model_name": "Polynomial Regression (Degree 3)",
-      "r2_percentage": 45.61,
-      "mae": 17.1514,
-      "rmse": 30.0668,
-      "mape": 5.02,
+      "r2_percentage": 45.35,
+      "mae": 17.0243,
+      "rmse": 29.8936,
+      "mape": 4.99,
       "features_used": [
         "Open",
         "High",
@@ -46,10 +46,10 @@
     {
       "model_key": "svr",
       "model_name": "Support Vector Regression (SVR - RBF)",
-      "r2_percentage": -2543.84,
-      "mae": 205.088,
-      "rmse": 209.6345,
-      "mape": 63.19,
+      "r2_percentage": -2598.47,
+      "mae": 205.6321,
+      "rmse": 210.061,
+      "mape": 63.3,
       "features_used": [
         "Open",
         "High",
@@ -60,10 +60,10 @@
     {
       "model_key": "random_forest",
       "model_name": "Random Forest Regressor",
-      "r2_percentage": -1060.82,
-      "mae": 132.7927,
-      "rmse": 138.9084,
-      "mape": 40.38,
+      "r2_percentage": -1083.14,
+      "mae": 133.0862,
+      "rmse": 139.0929,
+      "mape": 40.43,
       "features_used": [
         "Open",
         "High",
@@ -74,10 +74,10 @@
     {
       "model_key": "gradient_boosting",
       "model_name": "Gradient Boosting Regressor",
-      "r2_percentage": -1060.05,
-      "mae": 132.7571,
-      "rmse": 138.8621,
-      "mape": 40.37,
+      "r2_percentage": -1081.87,
+      "mae": 133.0236,
+      "rmse": 139.0184,
+      "mape": 40.42,
       "features_used": [
         "Open",
         "High",
