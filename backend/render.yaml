@@ -11,4 +11,4 @@ services:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: CACHE_TTL
-        value: 60
+        value: 60git push
