@@ -15,38 +15,45 @@ def download_historical_data(asset: AssetConfig, years: int = 7) -> pd.DataFrame
     """
     Downloads ~6-7 years of daily historical data using yfinance.
     Normalizes columns and timestamps.
+    Falls back to local historical CSV dataset if network download fails.
     """
-    period = f"{years}y"
-    ticker = yf.Ticker(asset.symbol_yfinance)
-    df = ticker.history(period=period, interval="1d")
+    try:
+        period = f"{years}y"
+        ticker = yf.Ticker(asset.symbol_yfinance)
+        df = ticker.history(period=period, interval="1d")
 
-    if df.empty:
-        raise ValueError(f"Failed to download historical data for {asset.name} ({asset.symbol_yfinance})")
+        if not df.empty:
+            # Reset index to make Date a column
+            df = df.reset_index()
 
-    # Reset index to make Date a column
-    df = df.reset_index()
+            # Standardize column names
+            df.rename(columns={
+                "Date": "Date",
+                "Open": "Open",
+                "High": "High",
+                "Low": "Low",
+                "Close": "Close",
+                "Volume": "Volume"
+            }, inplace=True)
 
-    # Standardize column names
-    df.rename(columns={
-        "Date": "Date",
-        "Open": "Open",
-        "High": "High",
-        "Low": "Low",
-        "Close": "Close",
-        "Volume": "Volume"
-    }, inplace=True)
+            # Ensure required columns exist
+            required_cols = ["Date", "Open", "High", "Low", "Close", "Volume"]
+            if all(col in df.columns for col in required_cols):
+                cleaned_df = clean_market_data(df[required_cols])
+                # Save locally for reproducibility
+                save_raw_dataset(cleaned_df, asset.id)
+                return cleaned_df
+    except Exception as e:
+        print(f"[Warning] Failed to download fresh historical data for {asset.name}: {e}")
 
-    # Ensure required columns exist
-    required_cols = ["Date", "Open", "High", "Low", "Close", "Volume"]
-    for col in required_cols:
-        if col not in df.columns:
-            raise KeyError(f"Missing required column '{col}' in yfinance payload for {asset.name}")
+    # Fallback to locally cached dataset
+    local_df = load_local_dataset(asset.id)
+    if local_df is not None and not local_df.empty:
+        print(f"[Info] Loaded local historical dataset for {asset.name} ({len(local_df)} rows)")
+        return local_df
 
-    df = clean_market_data(df[required_cols])
-    
-    # Save locally for reproducibility
-    save_raw_dataset(df, asset.id)
-    return df
+    raise ValueError(f"Failed to download or load historical data for {asset.name} ({asset.symbol_yfinance})")
+
 
 def clean_market_data(df: pd.DataFrame) -> pd.DataFrame:
     """

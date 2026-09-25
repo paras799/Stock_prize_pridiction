@@ -7,9 +7,9 @@
     {
       "model_key": "linear",
       "model_name": "Simple Linear Regression",
-      "r2_percentage": 96.67,
-      "mae": 11.7639,
-      "rmse": 16.0353,
+      "r2_percentage": 96.71,
+      "mae": 11.7799,
+      "rmse": 16.0467,
       "mape": 0.85,
       "features_used": [
         "Open"
@@ -18,10 +18,10 @@
     {
       "model_key": "multiple_linear",
       "model_name": "Multiple Linear Regression",
-      "r2_percentage": 99.51,
-      "mae": 4.7878,
-      "rmse": 6.1587,
-      "mape": 0.35,
+      "r2_percentage": 98.53,
+      "mae": 8.0341,
+      "rmse": 10.739,
+      "mape": 0.58,
       "features_used": [
         "Open",
         "High",
@@ -32,10 +32,10 @@
     {
       "model_key": "polynomial",
       "model_name": "Polynomial Regression (Degree 3)",
-      "r2_percentage": 99.54,
-      "mae": 4.6655,
-      "rmse": 5.9442,
-      "mape": 0.34,
+      "r2_percentage": 99.52,
+      "mae": 4.7892,
+      "rmse": 6.1215,
+      "mape": 0.35,
       "features_used": [
         "Open",
         "High",
@@ -46,9 +46,9 @@
     {
       "model_key": "svr",
       "model_name": "Support Vector Regression (SVR - RBF)",
-      "r2_percentage": 98.48,
-      "mae": 8.1807,
-      "rmse": 10.8439,
+      "r2_percentage": 98.5,
+      "mae": 8.1767,
+      "rmse": 10.8474,
       "mape": 0.58,
       "features_used": [
         "Open",
@@ -60,9 +60,9 @@
     {
       "model_key": "random_forest",
       "model_name": "Random Forest Regressor",
-      "r2_percentage": 98.66,
-      "mae": 7.7747,
-      "rmse": 10.1652,
+      "r2_percentage": 98.68,
+      "mae": 7.8029,
+      "rmse": 10.1733,
       "mape": 0.57,
       "features_used": [
         "Open",
@@ -74,10 +74,10 @@
     {
       "model_key": "gradient_boosting",
       "model_name": "Gradient Boosting Regressor",
-      "r2_percentage": 98.36,
-      "mae": 8.6323,
-      "rmse": 11.2565,
-      "mape": 0.63,
+      "r2_percentage": 98.29,
+      "mae": 8.9142,
+      "rmse": 11.5765,
+      "mape": 0.65,
       "features_used": [
         "Open",
         "High",

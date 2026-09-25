@@ -84,26 +84,52 @@ def _fetch_from_twelve_data(asset: AssetConfig) -> Optional[Dict[str, Any]]:
 def _fetch_from_yfinance_fallback(asset: AssetConfig) -> Dict[str, Any]:
     """
     Fallback method using yfinance to fetch the latest market day data.
+    If yfinance fails or returns empty data (e.g. rate limits or connection errors),
+    falls back gracefully to the latest entry in the local historical dataset.
     """
-    ticker = yf.Ticker(asset.symbol_yfinance)
-    hist = ticker.history(period="5d")
-    
-    if hist.empty:
-        raise RuntimeError(f"Unable to fetch market data for {asset.name} from any source.")
+    try:
+        ticker = yf.Ticker(asset.symbol_yfinance)
+        hist = ticker.history(period="5d")
+        
+        if not hist.empty:
+            latest_row = hist.iloc[-1]
+            last_date = hist.index[-1].strftime("%Y-%m-%d")
 
-    latest_row = hist.iloc[-1]
-    last_date = hist.index[-1].strftime("%Y-%m-%d")
+            return {
+                "asset_id": asset.id,
+                "asset_name": asset.name,
+                "symbol": asset.symbol_yfinance,
+                "currency": asset.currency,
+                "timestamp": last_date,
+                "open": round(float(latest_row["Open"]), 4),
+                "high": round(float(latest_row["High"]), 4),
+                "low": round(float(latest_row["Low"]), 4),
+                "volume": round(float(latest_row["Volume"]), 2),
+                "source": "yfinance (Real-time Fallback)",
+                "is_delayed": True
+            }
+    except Exception as e:
+        print(f"[Warning] yfinance fallback failed for {asset.name}: {e}")
 
-    return {
-        "asset_id": asset.id,
-        "asset_name": asset.name,
-        "symbol": asset.symbol_yfinance,
-        "currency": asset.currency,
-        "timestamp": last_date,
-        "open": round(float(latest_row["Open"]), 4),
-        "high": round(float(latest_row["High"]), 4),
-        "low": round(float(latest_row["Low"]), 4),
-        "volume": round(float(latest_row["Volume"]), 2),
-        "source": "yfinance (Real-time Fallback)",
-        "is_delayed": True
-    }
+    # Ultimate offline fallback: load latest row from locally cached historical dataset
+    from app.ml.preprocessing import load_local_dataset
+    df_local = load_local_dataset(asset.id)
+    if df_local is not None and not df_local.empty:
+        latest_row = df_local.iloc[-1]
+        last_date = str(latest_row["Date_str"]) if "Date_str" in latest_row else str(latest_row["Date"])[:10]
+        return {
+            "asset_id": asset.id,
+            "asset_name": asset.name,
+            "symbol": asset.symbol_yfinance,
+            "currency": asset.currency,
+            "timestamp": last_date,
+            "open": round(float(latest_row["Open"]), 4),
+            "high": round(float(latest_row["High"]), 4),
+            "low": round(float(latest_row["Low"]), 4),
+            "volume": round(float(latest_row["Volume"]), 2),
+            "source": "Local Historical Cache (Offline Fallback)",
+            "is_delayed": True
+        }
+
+    raise RuntimeError(f"Unable to fetch market data for {asset.name} from any online or local source.")
+
